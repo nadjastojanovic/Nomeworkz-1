@@ -1,0 +1,35 @@
+.back {
+    height: 100px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.videoDiv {
+    margin: 0 auto;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+.Card{
+    background-color: #add8e6;
+    border: none;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+.faq{
+    border: black 1px solid;
+}
+
+.faq hr{
+    background-color: black;
+    height: 2px;
+}
