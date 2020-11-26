@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "4.11.1",
     "bootstrap": "4.5.3",
     "firebase": "8.1.1",
     "jquery": "3.5.1",
+    "material-ui": "0.20.2",
     "popper.js": "1.16.1",
     "react": "^17.0.1",
     "react-bootstrap": "1.4.0",
@@ -16,7 +18,9 @@
     "react-scripts": "4.0.0",
     "redux": "4.0.5",
     "redux-logger": "3.0.6",
-    "web-vitals": "^0.2.4"
+    "validator": "13.1.17",
+    "web-vitals": "^0.2.4",
+    "zxcvbn": "4.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -41,5 +45,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "resolutions": {
+    "material-ui/@babel/runtime": "7.0.0-beta.42"
+  },
+  "devDependencies": {
+    "@babel/runtime": "7.12.5"
   }
 }
