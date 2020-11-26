@@ -1,6 +1,6 @@
 .back {
     backgroumd-size:cover;
-    height : 100vh;
+    height : 70vh;
     width : 100vw;
     background-repeat : no-repeat;
 }
@@ -26,6 +26,9 @@
 .img-fluid{
     max-width: 100%;
     height: auto;
+}
+
+.image{
 }
 
 .faq{

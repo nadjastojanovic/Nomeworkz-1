@@ -70,8 +70,10 @@ function Home()
 			</Navbar>
 		</div>
 		<div className="row w-100 m-0">
-			<div className="back w-100" style={{backgroundImage : `url("back.webp")`}}>
-			<image className="image-fluid" src="main.webp"/>
+			<div className="back w-100 d-flex justify-content-center" style={{backgroundImage : `url("back.webp")`}}>
+				<div className="d-flex align-self-center">
+					<img className="image" src="main.webp"/>
+				</div>
 			</div>
 			<div className="row w-100">
 				<div className="col-lg-2 col-md-1 col-sm-0"></div>
