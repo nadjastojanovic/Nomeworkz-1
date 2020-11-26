@@ -63,13 +63,6 @@ function SignUpForm({
 
       <form onSubmit={onSubmit}>
         <TextField
-          name="username"
-          floatingLabelText="user name"
-          value={user.username}
-          onChange={onChange}
-          errorText={errors.username}
-        />
-        <TextField
           name="email"
           floatingLabelText="email"
           value={user.email}
@@ -115,7 +108,7 @@ function SignUpForm({
       </form>
       <p>
         Aleady have an account? <br />
-        <a href="/">Log in here</a>
+        <a href="/login">Log in here</a>
       </p>
     </div>
   );
