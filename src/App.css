@@ -1,5 +1,8 @@
 .back {
-    height: 100px;
+    backgroumd-size:cover;
+    height : 100vh;
+    width : 100vw;
+    background-repeat : no-repeat;
 }
 
 .text-center {

@@ -2,7 +2,7 @@ function Signup()
 {
 	return(
 		<>
-			Home
+			Signup
 		</>
 		);
 }

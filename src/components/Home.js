@@ -53,7 +53,7 @@ function Home()
 	return(
 		<>
 		<div>
-			<Navbar className="w-100 px-5 bg-info" expand="lg">
+			<Navbar className="w-100 px-5 bg-info" expand="lg" static>
 			  <Navbar.Brand className="" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
 			  <Navbar.Toggle aria-controls="basic-navbar-nav" />
 			  <Navbar.Collapse id="basic-navbar-nav">
@@ -61,20 +61,18 @@ function Home()
 				  {/* <Nav.Link className="px-5" href="/about" active>Home</Nav.Link> */}
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#about" active>About us</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#services" active>Services</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/nomes" active>Nomes</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/auth" active>
-				  	Hire
-				  </Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/signup" active>Signup</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/login" active>Login</Nav.Link>
 			    </Nav>
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
 		<div className="row w-100 m-0">
-			<div className="back" style={{backgroundImage : `url("back.webp")`}}>
+			<div className="back w-100" style={{backgroundImage : `url("back.webp")`}}>
+			<image className="image-fluid" src="main.webp"/>
 			</div>
-			<Image src="back.webp" fluid />
 			<div className="row w-100">
 				<div className="col-lg-2 col-md-1 col-sm-0"></div>
 				<div className="col-lg-8 col-md-10 col-sm-12 text-center px-5">
