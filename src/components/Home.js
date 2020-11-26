@@ -4,7 +4,7 @@ import firebase from 'firebase';
 import { Image,Card } from "react-bootstrap";
 import Faq from "react-faq-component";
 import { Nav, Navbar } from "react-bootstrap";
-
+import Icofont from 'react-icofont';
 
 const conf = {
     apiKey: "AIzaSyC0EcNFCIfy_R7sZQoAqvzdjyV-WMWf_QA",
@@ -43,7 +43,7 @@ const data = {
 const styles = {
 	bgColor: "#add8e6"
 };
- 
+
 const config = {};
 
 function Home()
@@ -151,36 +151,35 @@ function Home()
 					<div id="contact">
 						<h1>Contact Us</h1>
 						<div className="row">
-							<div className="col-6">
-								<h2>NomeWorkz</h2>
-								<p>Email : NomeWorkz@gmail.com</p>
-								<p>Phone : 9988776655, 9988475757</p>
-								<a href="">
-									<i class="icofont-facebook"></i>
-								</a>
-								<a href="">
-									<i class="icofont-instagram"></i>
-								</a>
-								<a href="">
-									<i class="icofont-whatsapp"></i>
-								</a>
-								<a href="">
-									<i class="icofont-google-plus"></i>
-								</a>
+							<div className="text-left col-6">
+								<h3><b>NomeWorkz</b></h3>
+								<p><b>Email</b> : NomeWorkz@gmail.com</p>
+								<p className="text-left"><b>Phone</b> : 9988776655, 9988475757</p>
+								<p className="ml-1">
+									<a href="">
+										<i className="icofont-facebook p-1 icofont-2x" style={{color : "black"}}></i>
+									</a>
+									<a href="">
+										<i className="icofont-google-plus p-1 icofont-2x" style={{color : "black"}}></i>
+									</a>
+									<a href="">
+										<i className="icofont-instagram p-1 icofont-2x" style={{color : "black"}}></i>
+									</a>
+									<a href="">
+										<i className="icofont-whatsapp p-1 icofont-2x" style={{color : "black"}}></i>
+									</a>
+								</p>
 							</div>
-							<div className="col-6">
+							<div className="col-6 text-left">
 								<h3>Useful Links</h3>
-								<a href="">Home</a>
+								<i className="icofont-caret-right"></i><a href="#">Home</a>
 								<br/>
-								<a href="">About Us</a>
+								<i className="icofont-caret-right"></i><a href="#about">About Us</a>
 								<br/>
-								<a href="">Services</a>
+								<i className="icofont-caret-right"></i><a href="#services">Services</a>
 								<br/>
-								<a href="">Nomes</a>
+								<i className="icofont-caret-right"></i><a href="#faq">Nomes</a>
 								<br/>
-								<a href="">FAQs</a>
-								<br/>
-								<a href="">Hire</a>
 							</div>
 						</div>
 					</div>

@@ -95,3 +95,11 @@ form {
     width: 85%;
   }
 }
+
+#contact a{
+  color: black;
+}
+#contact a:hover{
+  color: black;
+  text-decoration: none;
+}
