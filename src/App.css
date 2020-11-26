@@ -1,6 +1,6 @@
 .back {
     backgroumd-size:cover;
-    height : 70vh;
+    height : 100vh;
     width : 100vw;
     background-repeat : no-repeat;
 }
@@ -38,4 +38,9 @@
 .faq hr{
     background-color: black;
     height: 2px;
+}
+
+.navigation{
+    position:absolute;
+    width : 100%;
 }
