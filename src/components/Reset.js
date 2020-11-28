@@ -3,6 +3,8 @@ import TextField from "material-ui/TextField";
 import FlatButton from "material-ui/FlatButton";
 import React, { Component } from "react";
 import zxcvbn from "zxcvbn"
+import firebase from 'firebase';
+
 const validator = require("validator");
 
 const PasswordStr = props => {
@@ -69,19 +71,6 @@ function SignUpForm({
           onChange={onChange}
           errorText={errors.email}
         />
-
-        <div className="pwStrRow">
-          {score >= 1 && (
-            <div>
-              <PasswordStr score={score} /> 
-              <FlatButton 
-                className="pwShowHideBtn" 
-                label={btnTxt} onClick={pwMask} 
-                style={{position: 'relative', left: '50%', transform: 'translateX(-50%)'}} 
-              />
-            </div>
-            )} 
-        </div>
         <br />
         <RaisedButton
           className="signUpSubmit"
@@ -99,14 +88,14 @@ const validateSignUpForm = payload => {
   let message = "";
   let isFormValid = true;
 
-  if (
-    !payload ||
-    typeof payload.username !== "string" ||
-    payload.username.trim().length === 0
-  ) {
-    isFormValid = false;
-    errors.username = "Please provide a user name.";
-  }
+  // if (
+  //   !payload ||
+  //   typeof payload.username !== "string" ||
+  //   payload.username.trim().length === 0
+  // ) {
+  //   isFormValid = false;
+  //   errors.username = "Please provide a user name.";
+  // }
 
   if (
     !payload ||
@@ -117,19 +106,19 @@ const validateSignUpForm = payload => {
     errors.email = "Please provide a correct email address.";
   }
 
-  if (
-    !payload ||
-    typeof payload.password !== "string" ||
-    payload.password.trim().length < 8
-  ) {
-    isFormValid = false;
-    errors.password = "Password must have at least 8 characters.";
-  }
+  // if (
+  //   !payload ||
+  //   typeof payload.password !== "string" ||
+  //   payload.password.trim().length < 8
+  // ) {
+  //   isFormValid = false;
+  //   errors.password = "Password must have at least 8 characters.";
+  // }
 
-  if (!payload || payload.pwconfirm !== payload.password) {
-    isFormValid = false;
-    errors.pwconfirm = "Password confirmation doesn't match.";
-  }
+  // if (!payload || payload.pwconfirm !== payload.password) {
+  //   isFormValid = false;
+  //   errors.pwconfirm = "Password confirmation doesn't match.";
+  // }
 
   if (!isFormValid) {
     message = "Check the form for errors.";
@@ -147,23 +136,23 @@ const validateLoginForm = payload => {
   let message = "";
   let isFormValid = true;
 
-  if (
-    !payload ||
-    typeof payload.username !== "string" ||
-    payload.username.trim().length === 0
-  ) {
-    isFormValid = false;
-    errors.username = "Please provide your user name.";
-  }
+  // if (
+  //   !payload ||
+  //   typeof payload.username !== "string" ||
+  //   payload.username.trim().length === 0
+  // ) {
+  //   isFormValid = false;
+  //   errors.username = "Please provide your user name.";
+  // }
 
-  if (
-    !payload ||
-    typeof payload.password !== "string" ||
-    payload.password.trim().length === 0
-  ) {
-    isFormValid = false;
-    errors.password = "Please provide your password.";
-  }
+  // if (
+  //   !payload ||
+  //   typeof payload.password !== "string" ||
+  //   payload.password.trim().length === 0
+  // ) {
+  //   isFormValid = false;
+  //   errors.password = "Please provide your password.";
+  // }
 
   if (!isFormValid) {
     message = "Check the form for errors.";
@@ -238,6 +227,17 @@ class Reset extends Component {
 
   submitSignup(user) {
     var params = { username: user.usr, password: user.pw, email: user.email };
+    console.log(params);
+    firebase.auth().sendPasswordResetEmail(params.email)
+    .then((user) => {
+      alert("Mail sent")
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode,errorMessage);
+      alert(errorMessage)
+    });
   }
 
   validateForm(event) {

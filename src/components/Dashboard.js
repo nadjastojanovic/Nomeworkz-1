@@ -36,11 +36,9 @@ const config = {};
 
 function Dashboard()
 {
-	const state = useSelector(state => state);
-	// const dispatch = useDispatch();
-	console.clear();
-	console.log(state);
-	return(
+	if(localStorage.email)
+	{
+		return(
 		<>
 		<div className="navigation">
 			<Navbar className="w-100 px-5 bg-info" expand="lg" static>
@@ -177,7 +175,16 @@ function Dashboard()
 			</div>
 		</div>
 		</>
-		);
+		);	
+	}
+	else
+	{
+		return(
+			<>
+				<Redirect to="/"/>
+			</>
+			);
+	}
 }
 
 export default Dashboard;
