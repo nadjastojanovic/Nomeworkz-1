@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Profile from "./components/Profile";
 import Hire from "./components/Hire";
+import Form from "./components/Form";
 import Home from "./components/Home";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
@@ -31,6 +32,7 @@ function App() {
 		    		<Route exact path="/dashboard" component={() => <Dashboard dispatch={dispatch}/>} />
 		    		<Route exact path="/profile" component={() => <Profile />} />
 		    		<Route exact path="/hire" component={() => <Hire />} />
+		    		<Route exact path="/form" component={() => <Form />} />
 		    		<Redirect to="/"/>
 		    	</Switch>
 		    </div>

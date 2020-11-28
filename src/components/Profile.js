@@ -2,7 +2,7 @@ function Profile()
 {
 	return(
 		<>
-			Home
+			Profile
 		</>
 		);
 }
