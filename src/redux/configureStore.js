@@ -2,7 +2,9 @@ import { createStore, applyMiddleware, compose } from "redux";
 import reducer from "./reducer";
 import logger from "redux-logger";
 
-const state = {};
+const state = {
+	auth : 0
+};
 
 function configureStore()
 {

@@ -2,7 +2,7 @@ function Hire()
 {
 	return(
 		<>
-			Home
+			Hire
 		</>
 		);
 }

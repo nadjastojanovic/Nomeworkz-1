@@ -3,6 +3,9 @@ import TextField from "material-ui/TextField";
 import FlatButton from "material-ui/FlatButton";
 import React, { Component } from "react";
 import zxcvbn from "zxcvbn"
+import firebase from 'firebase';
+import { auth } from "./../redux/actions"
+
 const validator = require("validator");
 
 const PasswordStr = props => {
@@ -62,6 +65,13 @@ function SignUpForm({
       {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
 
       <form onSubmit={onSubmit}>
+      <TextField
+          name="username"
+          floatingLabelText="user name"
+          value={user.username}
+          onChange={onChange}
+          errorText={errors.username}
+        />
         <TextField
           name="email"
           floatingLabelText="email"
@@ -258,6 +268,19 @@ class Signup extends Component {
 
   submitSignup(user) {
     var params = { username: user.usr, password: user.pw, email: user.email };
+    firebase.auth().createUserWithEmailAndPassword(params.email, params.password)
+    .then((user) => {
+      user.user.sendEmailVerification();
+      //this.props.dispatch(auth);
+      alert("User created please login");
+      window.location.replace("/");
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode,errorMessage);
+      alert(errorMessage)
+    });
   }
 
   validateForm(event) {

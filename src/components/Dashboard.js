@@ -34,7 +34,7 @@ const styles = {
 
 const config = {};
 
-function Home()
+function Dashboard()
 {
 	const state = useSelector(state => state);
 	// const dispatch = useDispatch();
@@ -53,8 +53,7 @@ function Home()
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#services" active>Services</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/signup" active>Signup</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/login" active>Login</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/hire" active>Hire</Nav.Link>
 			    </Nav>
 			  </Navbar.Collapse>
 			</Navbar>
@@ -181,4 +180,4 @@ function Home()
 		);
 }
 
-export default Home;
+export default Dashboard;

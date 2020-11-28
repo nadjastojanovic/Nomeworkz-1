@@ -1,40 +1,42 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import Profile from "./components/Profile";
+import Hire from "./components/Hire";
 import Home from "./components/Home";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Reset from "./components/Reset";
-import Profile from "./components/Profile";
-import Hire from "./components/Hire";
-import { Provider } from "react-redux";
-import configureStore from "./redux/configureStore";
+import Dashboard from "./components/Dashboard";
+import { useDispatch, useSelector } from "react-redux";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-
 
 import './App.css';
 
-var store = configureStore();
+// var db = firebase.firestore();
 
 function App() {
+	console.clear();
+	let dispatch = useDispatch();
+	const state = useSelector(state => state);
+	console.log(state);
   return (
-  	<Provider store={store}>
-	  	<BrowserRouter>
-	  		<MuiThemeProvider>
-			    <div className="App">
-			    	<Switch>
-			    		<Route exact path="/" component={() => <Home />} />
-			    		<Route exact path="/signup" component={() => <Signup />} />
-			    		<Route exact path="/login" component={() => <Login />} />
-			    		<Route exact path="/reset" component={() => <Reset />} />
-			    		<Route exact path="/profile" component={() => <Profile />} />
-			    		<Route exact path="/hire" component={() => <Hire />} />
-			    		<Redirect to="/"/>
-			    	</Switch>
-			    </div>
-			</MuiThemeProvider>
-	    </BrowserRouter>
-	</Provider>
+  	<BrowserRouter>
+  		<MuiThemeProvider>
+		    <div className="App">
+		    	<Switch>
+		    		<Route exact path="/" component={() => <Home />} />
+		    		<Route exact path="/signup" component={() => <Signup dispatch={dispatch}/>} />
+		    		<Route exact path="/login" component={() => <Login dispatch={dispatch}/>} />
+		    		<Route exact path="/reset" component={() => <Reset dispatch={dispatch}/>} />
+		    		<Route exact path="/dashboard" component={() => <Dashboard dispatch={dispatch}/>} />
+		    		<Route exact path="/profile" component={() => <Profile />} />
+		    		<Route exact path="/hire" component={() => <Hire />} />
+		    		<Redirect to="/"/>
+		    	</Switch>
+		    </div>
+		</MuiThemeProvider>
+    </BrowserRouter>
   );
 }
-
+ 
 export default App;
