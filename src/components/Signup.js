@@ -3,12 +3,11 @@ import TextField from "material-ui/TextField";
 import FlatButton from "material-ui/FlatButton";
 import React, { Component } from "react";
 import zxcvbn from "zxcvbn"
-import firebase from 'firebase';
 import { auth } from "./../redux/actions"
+import firebase from "firebase"
+import db from "./Database";
 
 const validator = require("validator");
-
-var db = firebase.firestore();
 
 const PasswordStr = props => {
   var strColor;
