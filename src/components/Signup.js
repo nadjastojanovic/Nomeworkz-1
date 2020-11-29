@@ -8,6 +8,8 @@ import { auth } from "./../redux/actions"
 
 const validator = require("validator");
 
+var db = firebase.firestore();
+
 const PasswordStr = props => {
   var strColor;
   var strWidth;
@@ -268,19 +270,39 @@ class Signup extends Component {
 
   submitSignup(user) {
     var params = { username: user.usr, password: user.pw, email: user.email };
-    firebase.auth().createUserWithEmailAndPassword(params.email, params.password)
-    .then((user) => {
-      user.user.sendEmailVerification();
-      //this.props.dispatch(auth);
-      alert("User created please login");
-      window.location.replace("/");
-    })
-    .catch((error) => {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log(errorCode,errorMessage);
-      alert(errorMessage)
-    });
+      firebase.auth().createUserWithEmailAndPassword(params.email, params.password)
+      .then((user) => {
+        user.user.sendEmailVerification();
+        console.log(user);
+        db.collection("users").add(
+          {
+            email:params.email,
+            fullName : params.username,
+            phone : "6264733987",
+            phoneVerified : true,
+            uid : user.user.uid,
+            orders : [],
+            totalOrders : 0,
+            wallet:0
+          }
+        ).then((user)=>{
+          console.log(user);
+          alert("User created please login");
+          window.location.replace("/");
+        })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log(error);
+          alert(errorMessage)
+        });
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode,errorMessage);
+        alert(errorMessage)
+      });
   }
 
   validateForm(event) {

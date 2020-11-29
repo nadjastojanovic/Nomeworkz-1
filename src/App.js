@@ -13,8 +13,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import './App.css';
 
-// var db = firebase.firestore();
-
 function App() {
 	console.clear();
 	let dispatch = useDispatch();
