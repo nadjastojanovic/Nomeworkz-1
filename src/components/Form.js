@@ -1,4 +1,3 @@
-import { Nav, Navbar } from "react-bootstrap";
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 
@@ -45,7 +44,7 @@ function Form()
 										<hr/>
 									</div>
 									<div className="col-md-4 col-sm-4 text-center">
-										<img className="btn-md" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK9gqFKRn28xKHD1CAbEevdzsLmsv5yQkGnQ&usqp=CAU" alt="" style={imgStyle}/>
+										<img className="btn-md" src="cardback.jpeg" alt="" style={imgStyle}/>
 									</div>
 
 									<form className="ml-3">
