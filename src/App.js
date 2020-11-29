@@ -30,7 +30,7 @@ function App() {
 		    		<Route exact path="/dashboard" component={() => <Dashboard dispatch={dispatch}/>} />
 		    		<Route exact path="/profile" component={() => <Profile />} />
 		    		<Route exact path="/hire" component={() => <Hire />} />
-		    		<Route exact path="/form" component={() => <Form />} />
+		    		<Route exact path="/form/:name/:description/:rating" component={() => <Form />} />
 		    		<Redirect to="/"/>
 		    	</Switch>
 		    </div>
