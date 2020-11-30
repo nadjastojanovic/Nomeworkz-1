@@ -273,7 +273,7 @@ class Signup extends Component {
       .then((user) => {
         user.user.sendEmailVerification();
         console.log(user);
-        db.collection("users").add(
+        db.collection("users").doc(user.user.uid).set(
           {
             email:params.email,
             fullName : params.username,
