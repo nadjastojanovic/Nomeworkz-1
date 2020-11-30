@@ -1,3 +1,10 @@
+import StripeCheckout from "react-stripe-checkout";
+
+function handleToken(token)
+{
+	console.log(token);
+}
+
 function Wallet()
 {
 	return(
@@ -10,7 +17,13 @@ function Wallet()
 		    <li class="list-group-item">Current Balance :- {localStorage.wallet}</li>
 		  </ul>
 		  <div class="card-body">
-		    <a href="#" class="btn btn-primary card-link">Add money</a>
+		    <StripeCheckout 
+		    	stripeKey="pk_test_51HrQ9WISRuDB0X7oHBljiIAhHuJvnYU1lj1oVtbFxpUiQhEmWWaID1eGVi0jbvkVIWpse7D9cVk7Kdk4McfyvtD300sSnLCMU6"
+		    	token={handleToken}
+		    	email={localStorage.email}
+		    	allowRememberMe={false}
+		    	amount={20}
+		    />
 		  </div>
 		</div>
 		);
