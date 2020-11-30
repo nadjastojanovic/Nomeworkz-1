@@ -43,7 +43,7 @@ function Hire()
 									)}
 								</p>
 								<p class="card-text">{nome.description}</p>
-								<a href={"/form/"+nome.name+"/"+nome.description+"/"+nome.rating} class="btn btn-primary">Check full details</a>
+								<a href={"/form/"+nome.name+"/"+nome.description+"/"+nome.rating+"/"+nome.pic} class="btn btn-primary">Check full details</a>
 								</div>
 							</div>
 						</div>

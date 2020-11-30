@@ -55,6 +55,7 @@ function Dashboard()
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/hire" active>Hire</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/wallet" active>Wallet</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" onClick={signout} href="#" active>Signout</Nav.Link>
 			    </Nav>
 			  </Navbar.Collapse>

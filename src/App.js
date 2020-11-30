@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import Reset from "./components/Reset";
+import Wallet from "./components/Wallet"
 import Dashboard from "./components/Dashboard";
 import { useDispatch, useSelector } from "react-redux";
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -29,8 +30,8 @@ function App() {
 		    		<Route exact path="/reset" component={() => <Reset dispatch={dispatch}/>} />
 		    		<Route exact path="/dashboard" component={() => <Dashboard dispatch={dispatch}/>} />
 		    		<Route exact path="/profile" component={() => <Profile />} />
-		    		<Route exact path="/hire" component={() => <Hire />} />
-		    		<Route exact path="/form/:name/:description/:rating" component={() => <Form />} />
+		    		<Route exact path="/wallet" component={() => <Wallet />} />
+		    		<Route exact path="/form/:name/:description/:rating/:pic" component={() => <Form />} />
 		    		<Redirect to="/"/>
 		    	</Switch>
 		    </div>

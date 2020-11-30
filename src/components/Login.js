@@ -4,6 +4,8 @@ import React, { Component } from "react";
 import zxcvbn from "zxcvbn"
 import { auth } from "./../redux/actions"
 import firebase from 'firebase';
+import db from "./Database"
+
 const validator = require("validator");
 
 function SignUpForm({
@@ -176,8 +178,15 @@ class Login extends Component {
       if(user.user.emailVerified)
       {
         this.props.dispatch(auth);
-        localStorage.setItem("email",params.email);
-        window.location.replace("/dashboard");
+        db.collection("users").doc(user.user.uid).get().then((doc)=>{
+          let data = doc.data();
+          localStorage.setItem("email",data.email);
+          localStorage.setItem("name",data.fullName);
+          localStorage.setItem("phone",data.phone);
+          localStorage.setItem("wallet",data.wallet);
+        }).then(()=>{
+          window.location.replace("/dashboard");
+        })
       }
       else
       {
