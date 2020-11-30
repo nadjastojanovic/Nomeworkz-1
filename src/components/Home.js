@@ -1,10 +1,7 @@
-import { test } from "../redux/actions";
 import { Card } from "react-bootstrap";
 import Faq from "react-faq-component";
 import { Nav, Navbar } from "react-bootstrap";
-import Icofont from 'react-icofont';
-import { Switch, Route, Redirect } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from "react-router-dom";
 
 const data = {
     rows: [
@@ -35,9 +32,6 @@ const config = {};
 
 function Home()
 {
-	const state = useSelector(state => state);
-	// const dispatch = useDispatch();
-	console.clear();
 	if(localStorage.email)
 	{
 		return(
@@ -68,7 +62,7 @@ function Home()
 			<div className="row w-100 m-0">
 				<div className="back w-100 d-flex justify-content-center" style={{backgroundImage : `url("back.webp")`}}>
 					<div className="d-flex align-self-center">
-						<img className="image" src="main.webp"/>
+						<img className="image" src="main.webp" alt="main"/>
 					</div>
 				</div>
 				<div className="row w-100">
@@ -152,16 +146,16 @@ function Home()
 									<p><b>Email</b> : NomeWorkz@gmail.com</p>
 									<p className="text-left"><b>Phone</b> : 9988776655, 9988475757</p>
 									<p className="ml-1">
-										<a href="">
+										<a href="#">
 											<i className="icofont-facebook p-1 icofont-2x" style={{color : "black"}}></i>
 										</a>
-										<a href="">
+										<a href="#">
 											<i className="icofont-google-plus p-1 icofont-2x" style={{color : "black"}}></i>
 										</a>
-										<a href="">
+										<a href="#">
 											<i className="icofont-instagram p-1 icofont-2x" style={{color : "black"}}></i>
 										</a>
-										<a href="">
+										<a href="#">
 											<i className="icofont-whatsapp p-1 icofont-2x" style={{color : "black"}}></i>
 										</a>
 									</p>

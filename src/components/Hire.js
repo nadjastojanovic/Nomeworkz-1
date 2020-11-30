@@ -1,44 +1,26 @@
-import { Nav, Navbar } from "react-bootstrap";
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 import db from "./Database";
-
-const nomesArray = [
-	{
-		id : 1,
-		name : "Bill Gates",
-		rating : 1,
-		description : "Some brief details abot the nome. Some brief details abot the nome. Some brief details abot the nome."
-	},
-	{
-		id : 2,
-		name : "Bill Gates",
-		rating : 2,
-		description : "Some brief details abot the nome. Some brief details abot the nome. Some brief details abot the nome."
-	},
-	{
-		id : 3,
-		name : "Bill Gates",
-		rating : 3,
-		description : "Some brief details abot the nome. Some brief details abot the nome. Some brief details abot the nome."
-	},
-	{
-		id : 4,
-		name : "Bill Gates",
-		rating : 4,
-		description : "Some brief details abot the nome. Some brief details abot the nome. Some brief details abot the nome."
-	}
-]
 
 function Hire()
 {
-	var data = [];
+	var [nomesArray,setNomes] = useState([]);
+
+	var temp = [];
+
 	useEffect(()=>{
-		db.collection("gnomz").doc("SF").get().then((doc)=>{
-			if (!doc.exists) {
-			  console.log('No such document!');
-			} else {
-			  console.log('Document data:', doc.data());
-			}
+		db.collection("gnomz").get().then((querySnapshot)=>{
+		 	querySnapshot.docs.map((doc) => {
+		        temp.push({
+		        	id:doc.id,
+		        	name:doc.data().name,
+		        	phone:doc.data().phone,
+		        	rating:doc.data().rating,
+		        	pic:doc.data()["gnomi_pic_url"],
+		        	description : doc.data().info
+		        });
+		      });
+		}).then(()=>{
+			setNomes(temp);
 		});
 	},[]);
 
@@ -50,7 +32,9 @@ function Hire()
 					return(					
 						<div className="text-center offset-sm-2 col-sm-8 col-12 p-5">
 							<div class="card">
-								<img class="card-img-top p-2" src="cardback.jpeg" alt="Card image cap"/>
+								<div className="w-25 mx-auto">
+									<img class="card-img-top p-2" src={nome.pic} alt="Card cap"/>
+								</div>
 								<div class="card-body">
 								<h5 class="card-title">{nome.name}</h5>
 								<p class="card-text"><strong>Overall Rating: </strong> 

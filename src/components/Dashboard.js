@@ -1,10 +1,7 @@
-import { test } from "../redux/actions";
 import { Card } from "react-bootstrap";
 import Faq from "react-faq-component";
 import { Nav, Navbar } from "react-bootstrap";
-import Icofont from 'react-icofont';
-import { Switch, Route, Redirect } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import {  Redirect } from "react-router-dom";
 
 
 const data = {
@@ -34,6 +31,12 @@ const styles = {
 
 const config = {};
 
+function signout()
+{
+	localStorage.removeItem("email");
+	window.location.reload();
+}
+
 function Dashboard()
 {
 	if(localStorage.email)
@@ -52,6 +55,7 @@ function Dashboard()
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
 			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/hire" active>Hire</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" onClick={signout} href="#" active>Signout</Nav.Link>
 			    </Nav>
 			  </Navbar.Collapse>
 			</Navbar>
@@ -59,7 +63,7 @@ function Dashboard()
 		<div className="row w-100 m-0">
 			<div className="back w-100 d-flex justify-content-center" style={{backgroundImage : `url("back.webp")`}}>
 				<div className="d-flex align-self-center">
-					<img className="image" src="main.webp"/>
+					<img className="image" alt="main" src="main.webp"/>
 				</div>
 			</div>
 			<div className="row w-100">

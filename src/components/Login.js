@@ -1,51 +1,10 @@
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
-import FlatButton from "material-ui/FlatButton";
 import React, { Component } from "react";
 import zxcvbn from "zxcvbn"
 import { auth } from "./../redux/actions"
 import firebase from 'firebase';
 const validator = require("validator");
-
-
-const PasswordStr = props => {
-  var strColor;
-  var strWidth;
-
-  switch (props.score) {
-    case 1:
-      strColor = 'red';
-      strWidth = '20%';
-      break;
-    case 2:
-      strColor = 'orange';
-      strWidth = '40%';
-      break;
-    case 3:
-      strColor = 'yellow';
-      strWidth = '60%';
-      break;
-    case 4:
-      strColor = '#5cff47';
-      strWidth = '80%';
-      break;
-    case 5:
-      strColor = 'green';
-      strWidth = '100%';
-      break;
-    default:
-  }
-
-  var style = { backgroundColor: strColor, height: '5px', width: strWidth, transition: 'all 300ms ease-in-out' }
-
-  return (
-  <div>
-    <p className="pwStrWeak">weak</p>
-    <p className="pwStrStrong">strong</p>
-    <div style={style} />
-  </div> 
-  );
-}
 
 function SignUpForm({
   history,
@@ -136,40 +95,6 @@ const validateSignUpForm = payload => {
   //   isFormValid = false;
   //   errors.pwconfirm = "Password confirmation doesn't match.";
   // }
-
-  if (!isFormValid) {
-    message = "Check the form for errors.";
-  }
-
-  return {
-    success: isFormValid,
-    message,
-    errors
-  };
-};
-
-const validateLoginForm = payload => {
-  const errors = {};
-  let message = "";
-  let isFormValid = true;
-
-  // if (
-  //   !payload ||
-  //   typeof payload.username !== "string" ||
-  //   payload.username.trim().length === 0
-  // ) {
-  //   isFormValid = false;
-  //   errors.username = "Please provide your user name.";
-  // }
-
-  if (
-    !payload ||
-    typeof payload.password !== "string" ||
-    payload.password.trim().length === 0
-  ) {
-    isFormValid = false;
-    errors.password = "Please provide your password.";
-  }
 
   if (!isFormValid) {
     message = "Check the form for errors.";

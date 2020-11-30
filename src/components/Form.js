@@ -8,16 +8,6 @@ function Form()
 	}
 
 	let params = useParams();
-	var temp = "";
-	for(let i = 0;i<params.rating;i++)
-	{
-		temp += (<i className="icofont-star"></i>);
-	}
-	console.log(temp);
-
-	useEffect(()=>{
-		console.log(params);
-	},[])
 
 	return(
 		<>
@@ -44,7 +34,7 @@ function Form()
 										<hr/>
 									</div>
 									<div className="col-md-4 col-sm-4 text-center">
-										<img className="btn-md" src="cardback.jpeg" alt="" style={imgStyle}/>
+										<img className="btn-md" src="./back.webp" alt="" style={imgStyle}/>
 									</div>
 
 									<form className="ml-3">
