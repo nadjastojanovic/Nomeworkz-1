@@ -9,6 +9,71 @@ function Form()
 
 	let params = useParams();
 
+	const submitHandler = (e) =>{
+		e.preventDefault();
+		let pages = e.target.pages.value;
+		let type = e.target.type.value;
+		let dl = e.target.date.value;
+		
+		var todayDateString = new Date().toISOString().slice(0,10);
+		let todayDate = new Date(todayDateString);
+		let dlDate = new Date(dl);
+		const diffTime = (dlDate - todayDate);
+		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+		let error = 0;
+		let arr = [
+			[17.95, 20.95, 23.95, 28.95],
+			[12.95, 15.95, 18.95, 23.95],
+			[10.95, 13.95, 16.95, 21.95],
+			[8.95, 11.95, 14.95, 19.95]
+		];
+
+		let typeKey;
+		switch(type){
+			case ("High School"):{
+				typeKey = 0;
+				break;
+			}
+			case ("Undergraduate"):{
+				typeKey = 1;
+				break;
+			}
+			case ("Graduate"):{
+				typeKey = 2;
+				break;
+			}
+			case ("Ph.D."):{
+				typeKey = 3;
+				break;
+			}
+		}
+		let dateKey;
+		if(diffDays<=0){
+			dateKey = -1;
+		}
+		else if(diffDays==1){
+			dateKey = 0;
+		}
+		else if(diffDays==2){
+			dateKey = 1;
+		}
+		else if(diffDays<=6){
+			dateKey = 2;
+		}
+		else{
+			dateKey = 3;
+		}
+
+		if(diffDays<=0){
+			error = 1;
+			console.log("error");
+		}
+		else{
+			let amount = arr[dateKey][typeKey];
+			console.log(amount);
+		}
+	}
+
 	return(
 		<>
 		<div className="container-fluid">
@@ -37,7 +102,7 @@ function Form()
 										<img className="btn-md" src={params.pic} alt="" style={imgStyle}/>
 									</div>
 
-									<form className="ml-3">
+									<form className="ml-3" onSubmit={(e) => submitHandler(e)}>
 										<div className="form-group">
 											<label for="exampleFormControlFile1">Upload Image and Reference Files (10mb Max)</label>
 											<input type="file" className="form-control-file" id="exampleFormControlFile1" />
@@ -46,22 +111,21 @@ function Form()
 										<hr/>
 										<div className="form-group">
 											<label for="exampleFormControlSelect1">Homework Level</label>
-											<select className="form-control" id="exampleFormControlSelect1">
+											<select name = "type" className="form-control" id="exampleFormControlSelect1">
 											<option>High School</option>
-											<option>2</option>
-											<option>3</option>
-											<option>4</option>
-											<option>5</option>
+											<option>Undergraduate</option>
+											<option>Graduate</option>
+											<option>Ph.D.</option>
 											</select>
 										</div>
 										<div className="form-group">
 											<label for="exampleFormControlSelect1">Number of Pages (One page will have 500 words approx.)</label>
-											<select className="form-control" id="exampleFormControlSelect1">
-											<option>1-5</option>
-											<option>5-10</option>
-											<option>10-15</option>
-											<option>15-20</option>
-											<option>More than 20</option>
+											<select name = "pages" className="form-control" id="exampleFormControlSelect1">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>More than 4</option>
 											</select>
 										</div>
 										<hr/>
@@ -77,7 +141,7 @@ function Form()
 										<div className="form-group">
 											<label for="example-date-input">Choose Date</label>
 											<div className="col-10">
-												<input className="form-control" type="date" value="2011-08-19" id="example-date-input"/>
+												<input name = "date" className="form-control" type="date" id="example-date-input"/>
 											</div>
 										</div>
 										<button type="submit" className="btn btn-primary">Calculate Price</button>
