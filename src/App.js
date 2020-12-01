@@ -31,6 +31,7 @@ function App() {
 		    		<Route exact path="/dashboard" component={() => <Dashboard dispatch={dispatch}/>} />
 		    		<Route exact path="/profile" component={() => <Profile />} />
 		    		<Route exact path="/wallet" component={() => <Wallet />} />
+		    		<Route exact path="/hire" component={() => <Hire />} />
 		    		<Route exact path="/form/:name/:description/:rating/:pic" component={() => <Form />} />
 		    		<Redirect to="/"/>
 		    	</Switch>
