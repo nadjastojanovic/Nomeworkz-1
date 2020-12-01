@@ -1,8 +1,11 @@
-import { useEffect } from "react"
+import { useState } from "react"
 import { useParams } from "react-router-dom"
 
 function Form()
 {
+	const [amount, setAmount] = useState(-1);
+	const [error, setError] = useState("Please select the specification to get estimated price.");
+
 	const imgStyle = {
 		borderRadius : "50%"
 	}
@@ -48,7 +51,7 @@ function Form()
 			}
 		}
 		let dateKey;
-		if(diffDays<=0){
+		if(diffDays<=0 || dl===""){
 			dateKey = -1;
 		}
 		else if(diffDays==1){
@@ -64,14 +67,27 @@ function Form()
 			dateKey = 3;
 		}
 
-		if(diffDays<=0){
-			error = 1;
-			console.log("error");
+		if(dateKey===-1){
+			setError("Please select a day in future");
+			setAmount(-1);
 		}
 		else{
-			let amount = arr[dateKey][typeKey];
-			console.log(amount);
+			let temp = arr[dateKey][typeKey];
+			setAmount(temp);
+			setError("");
 		}
+	}
+
+	let bookNow;
+	if(amount==-1){
+		bookNow = <p>{error}</p>
+	}
+	else{
+		bookNow = 
+		<>
+			<p>Estimated Price is : {amount}</p>
+			<button className="btn btn-primary">Book Now</button>
+		</>
 	}
 
 	return(
@@ -146,6 +162,9 @@ function Form()
 										</div>
 										<button type="submit" className="btn btn-primary">Calculate Price</button>
 									</form>
+								</div>
+								<div className="text-center">
+									{bookNow}
 								</div>
 							</div>
 						</div>
