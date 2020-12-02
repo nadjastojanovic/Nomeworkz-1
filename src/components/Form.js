@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useParams } from "react-router-dom"
+import db from "./Database";
+import { v1 } from "uuid";
 
 function Form()
 {
@@ -11,12 +13,71 @@ function Form()
 	}
 
 	let params = useParams();
+	var pages;
+	var type;
+	var dl;
+	var description;
+	var spnotes;
+
+	let booker = ()=>{
+		let info = {
+			completed:false,
+			confiirmed : 0,
+			date : new Date(),
+			description : description,
+			gnomeNickName:params.name,
+			gnomeid:params.id,
+			homeworkLevel: type,
+			imageUrls :[],
+			numberOfPages : pages,
+			price : amount,
+			service : 1,
+			specialNote : spnotes,
+			subService : null,
+			uid : localStorage.id,
+			username: localStorage.name
+		}
+		console.log(info);
+		if(localStorage.wallet - amount >= 0)
+		{
+			db.collection("users").doc(localStorage.id).update(
+	        {
+	        	wallet : (localStorage.wallet-amount).toFixed(2),
+	        }
+	        ).then((data)=>{
+	          db.collection("homeworks").doc(v1()).set(
+	          	info
+		        ).then((inf)=>{
+		        	alert("Homework created");
+		        	localStorage.setItem("wallet",(localStorage.wallet-amount).toFixed(2));
+		        })
+		        .catch((error) => {
+		          var errorCode = error.code;
+		          var errorMessage = error.message;
+		          console.log(error);
+		          alert(errorMessage)
+		        });
+	        })
+	        .catch((error) => {
+	          var errorCode = error.code;
+	          var errorMessage = error.message;
+	          console.log(error);
+	          alert(errorMessage)
+	        });
+		}
+		else
+		{
+			alert("Wallet amount not enough")
+		}
+	}
 
 	const submitHandler = (e) =>{
 		e.preventDefault();
-		let pages = e.target.pages.value;
-		let type = e.target.type.value;
-		let dl = e.target.date.value;
+		pages = e.target.pages.value;
+		type = e.target.type.value;
+		dl = e.target.date.value;
+		description = e.target.description.value;
+		spnotes = e.target.spnotes.value;
 		
 		var todayDateString = new Date().toISOString().slice(0,10);
 		let todayDate = new Date(todayDateString);
@@ -86,7 +147,7 @@ function Form()
 		bookNow = 
 		<>
 			<p>Estimated Price is : {amount}</p>
-			<button className="btn btn-primary">Book Now</button>
+			<button className="btn btn-primary" onClick={booker}>Book Now</button>
 		</>
 	}
 
@@ -147,11 +208,11 @@ function Form()
 										<hr/>
 										<div className="form-group">
 											<label for="exampleFormControlTextarea1">Description about Homework</label>
-											<textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+											<textarea className="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
 										</div>
 										<div className="form-group">
 											<label for="exampleFormControlTextarea1">Special Notes</label>
-											<textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+											<textarea className="form-control" id="exampleFormControlTextarea1" rows="3" name="spnotes"></textarea>
 										</div>
 										<hr/>
 										<div className="form-group">
@@ -160,7 +221,7 @@ function Form()
 												<input name = "date" className="form-control" type="date" id="example-date-input"/>
 											</div>
 										</div>
-										<button type="submit" className="btn btn-primary">Calculate Price</button>
+										<input type="submit" className="btn btn-primary" value="Calculate Price"/>
 									</form>
 								</div>
 								<div className="text-center">

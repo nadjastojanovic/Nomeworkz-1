@@ -32,7 +32,7 @@ function App() {
 		    		<Route exact path="/profile" component={() => <Profile />} />
 		    		<Route exact path="/wallet" component={() => <Wallet />} />
 		    		<Route exact path="/hire" component={() => <Hire />} />
-		    		<Route path="/form/:name/:description/:rating/:pic" component={() => <Form />} />
+		    		<Route path="/form/:id/:name/:description/:rating/:pic" component={() => <Form />} />
 		    		<Redirect to="/"/>
 		    	</Switch>
 		    </div>

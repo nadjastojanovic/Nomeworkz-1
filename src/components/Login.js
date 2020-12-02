@@ -180,6 +180,7 @@ class Login extends Component {
         this.props.dispatch(auth);
         db.collection("users").doc(user.user.uid).get().then((doc)=>{
           let data = doc.data();
+          localStorage.setItem("id",user.user.uid);
           localStorage.setItem("email",data.email);
           localStorage.setItem("name",data.fullName);
           localStorage.setItem("phone",data.phone);
