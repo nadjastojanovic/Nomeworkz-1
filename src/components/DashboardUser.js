@@ -90,7 +90,7 @@ function Dashboard()
 					<div className = "py-4">
 						<h1>How it Works?</h1>
 						<div className="row mt-5">
-							<div className="col-lg-3 col-md-6 col-sm-12 px-0">
+							<div className="col-lg-2 col-md-6 col-sm-12 px-0">
 								<Card className="Card bg-transparent">
 									<Card.Img className="px-4" variant="top" src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
 									<Card.Body>
@@ -100,7 +100,6 @@ function Dashboard()
 									</Card.Body>
 								</Card>
 							</div>
-							<i className="icofont-arrow-right"></i>
 							<div className="col-lg-3 col-md-6 col-sm-12 px-0">
 								<Card className="pt-5 Card bg-transparent">
 									<Card.Img className="px-5" variant="top" src="https://static.wixstatic.com/media/c3a0d6_07eec9072880491fa44916f0efec7b97~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/img_77504.webp" />
