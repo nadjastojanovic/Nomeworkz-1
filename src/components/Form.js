@@ -67,7 +67,7 @@ function Form()
 		}
 		else
 		{
-			alert("Wallet amount not enough")
+			alert("Wallet amount not enough");
 		}
 	}
 

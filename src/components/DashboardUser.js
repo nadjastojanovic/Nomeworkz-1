@@ -44,19 +44,19 @@ function Dashboard()
 		return(
 		<>
 		<div className="navigation">
-			<Navbar className="w-100 px-5 bg-info" expand="lg" static>
+			<Navbar className="w-100 px-5 bg-transparent" expand="lg" static>
 			  <Navbar.Brand className="" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
 			  <Navbar.Toggle aria-controls="basic-navbar-nav" />
 			  <Navbar.Collapse id="basic-navbar-nav">
 			    <Nav className="ml-auto">
 				  {/* <Nav.Link className="px-5" href="/about" active>Home</Nav.Link> */}
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#about" active>About us</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#services" active>Services</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/hire" active>Hire</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/wallet" active>Wallet</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" onClick={signout} href="#" active>Signout</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="#about" active>About us</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="#services" active>Services</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="#faq" active>FAQ's</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="#contact" active>Contact us</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="/hire" active>Hire</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="/wallet" active>Wallet</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" onClick={signout} href="#" active>Signout</Nav.Link>
 			    </Nav>
 			  </Navbar.Collapse>
 			</Navbar>

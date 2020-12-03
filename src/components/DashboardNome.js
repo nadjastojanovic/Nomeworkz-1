@@ -44,7 +44,7 @@ function Dashboard()
 		return(
 		<>
 		<div className="navigation">
-			<Navbar className="w-100 px-5 bg-info" expand="lg" static>
+			<Navbar className="w-100 px-5 bg-transparent" expand="lg" static>
 			  <Navbar.Brand className="" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
 			  <Navbar.Toggle aria-controls="basic-navbar-nav" />
 			  <Navbar.Collapse id="basic-navbar-nav">
