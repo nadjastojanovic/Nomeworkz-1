@@ -64,13 +64,13 @@ function Dashboard()
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
-		<div className="row w-100 m-0 px-5">
+		<div className="row m-0 px-5">
 			<div className="back w-100 d-flex justify-content-center" style={{backgroundImage : `url("back.webp")`}}>
 				<div className="d-flex align-self-center">
 					<img className="image" alt="main" src="main.webp"/>
 				</div>
 			</div>
-			<div className="row w-100">
+			<div className="row">
 				<div className="col-lg-2 col-md-1 col-sm-0"></div>
 				<div className="col-lg-8 col-md-10 col-sm-12 text-center px-5">
 					<div className = "py-4" id="about">
@@ -80,7 +80,7 @@ function Dashboard()
 							We all know that life doesn't always go as planned and that at times, we've struggled to hit deadlines. Whether you are a student athlete, working to put yourself through college, have a presentation at your office, or are a parent that simply wants to give their child a little added support, we sometimes could use a little help. Nomeworkz online writing service was created as a tool to help students with their academic performance! We have some of the most skilled writers to assist in creating original, custom papers for any educational level.
 						</p>
 					</div>
-					<div className = "py-4">
+					<div className="py-4">
 						<h1>What is NomeWorkz?</h1>
 						<div className="videoDiv py-4">
 							<video className="video" controls>
