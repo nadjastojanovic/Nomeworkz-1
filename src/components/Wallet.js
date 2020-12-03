@@ -3,39 +3,48 @@ import { useState } from "react"
 
 const stripe = require("stripe")("sk_test_51HrQ9WISRuDB0X7oRPe1lkwQzgiLm2PgBy1f2uvlZmRhObzqdwdX7SW1LohcBF8MiJZZ2JZvpPthSnaJEqwQPj7o00e0oeJzvB");
 
-async function handleToken(amount, token)
+async function handleToken(token,amount)
 {
-	console.log(`token : ${token}`);
+	console.log(token);
 	let status;
-	try{
-		console.log("start");
-		const customer = await
-		stripe.customers.create({
-			email: token.email,
-			source: token.id
-		});
-		console.log("here1");
-		const idempotency_key = 123;
-		const charge = await stripe.charges.create(
-			{
-				amount: amount,
-				currency: "usd",
-				customer: customer.id,
-				receipt_email: token.email,
-				description: `Paid an amount of ${amount}.`,
-			},
-			{
-				idempotency_key
-			}
-		);
-		console.log("here2");
-		status = "success";
-		console.log(status);
-	} 
-	catch(error){
-		console.log(`error : ${error}`);
-		status = "failure";
-	}
+	console.log(token.email,token.id);
+	let t = await stripe.customers.create({
+		email: "namanzelawat@gmail.com",
+		//source: token.id
+	}).then((function(customer){
+		console.log(customer);
+	})).catch((err)=>{
+		console.log(err)
+	});
+	console.log("exiting")
+	// try{
+	// 	console.log(token.email,token.id);
+	// 	stripe.customers.create({
+	// 		email: token.email,
+	// 		source: token.id
+	// 	});
+		// console.log("here1");
+		// const idempotency_key = 123;
+		// const charge = await stripe.charges.create(
+		// 	{
+		// 		amount: amount,
+		// 		currency: "usd",
+		// 		customer: customer.id,
+		// 		receipt_email: token.email,
+		// 		description: `Paid an amount of ${amount}.`,
+		// 	},
+		// 	{
+		// 		idempotency_key
+		// 	}
+		// );
+		// console.log("here2");
+		// status = "success";
+		// console.log(status);
+	// } 
+	// catch(error){
+	// 	console.log(`error : ${error}`);
+	// 	status = "failure";
+	// }
 }
 
 
