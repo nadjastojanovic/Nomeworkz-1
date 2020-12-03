@@ -9,6 +9,10 @@
   width:10px;
 }*/
 
+.backcolor{
+  background-color:#DBF9FF;
+}
+
 .text-center {
     text-align: center;
 }
@@ -35,9 +39,6 @@
 .img-fluid{
     max-width: 100%;
     height: auto;
-}
-
-.image{
 }
 
 .faq{

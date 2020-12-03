@@ -25,7 +25,7 @@ const data = {
 };
  
 const styles = {
-	bgColor: "#add8e6"
+	bgColor: "#DBF9FF"
 };
 
 const config = {};
@@ -51,25 +51,25 @@ function Home()
 			<div>
 				<Navbar className="w-100 px-5 navigation shadow-lg" expand="lg" static>
 				  <Navbar.Brand className="" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
-				  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-				  <Navbar.Collapse id="basic-navbar-nav">
-					<Nav className="ml-auto">
+				  <Navbar.Toggle aria-controls="basic-navbar-nav backcolor" />
+				  <Navbar.Collapse id="basic-navbar-nav backcolor">
+					<Nav className="ml-auto backcolor">
 					  {/* <Nav.Link className="px-5" href="/about" active>Home</Nav.Link> */}
-					  <Nav.Link className="mx-4 justify-content-center align-self-center" href="#" active>Home</Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center" href="#about" active>About us</Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center" href="#services" active>Services</Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center" href="/intermediate-signup" active>Signup</Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center" href="/intermediate-login" active>Login</Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#" active><b>Home</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#about" active><b>About us</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#services" active><b>Services</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#faq" active><b>FAQ's</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#contact" active><b>Contact us</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="/intermediate-signup" active><b>Signup</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="/intermediate-login" active><b>Login</b></Nav.Link>
 					</Nav>
 				  </Navbar.Collapse>
 				</Navbar>
 			</div>
 			<div className="row row1">
-				<div className="back w-100 d-flex justify-content-center" style={{backgroundImage : `url("back.webp")`}}>
-					<div className="d-flex align-self-center">
-						<img className="image" src="main.webp" alt="main"/>
+				<div className="back w-100" style={{backgroundImage : `url("back.webp")`}}>
+					<div className="p-sm-5">
+						<img className="image p-sm-5" src="main.webp" alt="main"/>
 					</div>
 				</div>
 				<div className="row w-100">
