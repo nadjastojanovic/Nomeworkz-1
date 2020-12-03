@@ -43,27 +43,28 @@ function Dashboard()
 	{
 		return(
 		<>
-		<div className="navigation shadow-lg">
-			<Navbar className="w-100 px-5 navv shadow-lg" expand="lg" static>
-			  <Navbar.Brand className="" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
+		<div>
+			<Navbar className="w-100 px-5 navigation shadow-lg" expand="lg" static>
+			  <Navbar.Brand className="ml-5" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
 			  <Navbar.Toggle aria-controls="basic-navbar-nav" />
 			  <Navbar.Collapse id="basic-navbar-nav">
 			    <Nav className="ml-auto">
 				  {/* <Nav.Link className="px-5" href="/about" active>Home</Nav.Link> */}
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#about" active>About us</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#services" active>Services</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/hire" active>Hire</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/wallet" active>Wallet</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center" onClick={signout} href="#" active>Signout</Nav.Link>
+				  <Nav.Link className="mx-4 justify-content-center align-self-center" href="#" active><b>Home</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#about" active><b>About us</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#services" active><b>Services</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#faq" active><b>FAQ's</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#contact" active><b>Contact us</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/hire" active><b>Hire</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/wallet" active><b>Wallet</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" onClick={signout} href="#" active><b>Signout</b></Nav.Link>
 			    </Nav>
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
-		<div className="row w-100 m-0">
-			<div className="back w-100 d-flex justify-content-center" style={{backgroundImage : `url("back.webp")`}}>
-				<div className="d-flex align-self-center">
+		<div className="row">
+			<div className="back w-100 pt-5" style={{backgroundImage : `url("back.webp")`}}>
+				<div className="d-flex align-self-center mt-5 ml-5">
 					<img className="image" alt="main" src="main.webp"/>
 				</div>
 			</div>
