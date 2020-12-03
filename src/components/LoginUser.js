@@ -51,7 +51,7 @@ function SignUpForm({
       </form>
       <p>
         Create new account? <br />
-        <a href="/signup">Signup here</a>
+        <a href="/intermediate-signup">Signup here</a>
       </p>
       <p>
         Forgot password? <br />
@@ -177,7 +177,6 @@ class Login extends Component {
       console.log(user.user)
       if(user.user.emailVerified)
       {
-        this.props.dispatch(auth);
         db.collection("users").doc(user.user.uid).get().then((doc)=>{
           let data = doc.data();
           localStorage.setItem("id",user.user.uid);
@@ -186,7 +185,7 @@ class Login extends Component {
           localStorage.setItem("phone",data.phone);
           localStorage.setItem("wallet",data.wallet);
         }).then(()=>{
-          window.location.replace("/dashboard");
+          window.location.replace("/dashboard-user");
         })
       }
       else

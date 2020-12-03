@@ -4,7 +4,7 @@ import FlatButton from "material-ui/FlatButton";
 import React, { Component } from "react";
 
 
-class SignupNome extends Component {
+class IntermediateLogin extends Component {
   render() {
     return (
       <div className="loginBox">
@@ -14,14 +14,14 @@ class SignupNome extends Component {
           className="signUpSubmit"
           primary={true}
           label="user"
-          onClick={()=>{window.location.replace("/signup-user")}}
+          onClick={()=>{window.location.replace("/login-user")}}
         />
         <br />
         <RaisedButton
           className="signUpSubmit"
           primary={true}
           label="nome"
-          onClick={()=>{window.location.replace("/signup-nome")}}
+          onClick={()=>{window.location.replace("/login-nome")}}
         />
       </form>
     </div>
@@ -29,4 +29,4 @@ class SignupNome extends Component {
   }
 }
 
-export default SignupNome;
+export default IntermediateLogin;

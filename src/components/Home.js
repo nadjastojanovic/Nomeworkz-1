@@ -32,10 +32,16 @@ const config = {};
 
 function Home()
 {
-	if(localStorage.email)
+	if(localStorage.wallet)
 	{
 		return(
-			<Redirect to="/dashboard"/>
+			<Redirect to="/dashboard-user"/>
+		);
+	}
+	else if(localStorage.email)
+	{
+		return(
+			<Redirect to="/dashboard-nomes"/>
 		);
 	}
 	else
@@ -53,8 +59,8 @@ function Home()
 					  <Nav.Link className="px-5 justify-content-center align-self-center" href="#services" active>Services</Nav.Link>
 					  <Nav.Link className="px-5 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
 					  <Nav.Link className="px-5 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
-					  <Nav.Link className="px-5 justify-content-center align-self-center" href="/intermediate" active>Signup</Nav.Link>
-					  <Nav.Link className="px-5 justify-content-center align-self-center" href="/login" active>Login</Nav.Link>
+					  <Nav.Link className="px-5 justify-content-center align-self-center" href="/intermediate-signup" active>Signup</Nav.Link>
+					  <Nav.Link className="px-5 justify-content-center align-self-center" href="/intermediate-login" active>Login</Nav.Link>
 					</Nav>
 				  </Navbar.Collapse>
 				</Navbar>

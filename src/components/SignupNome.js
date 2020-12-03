@@ -142,7 +142,7 @@ function SignUpForm({
       </form>
       <p>
         Aleady have an account? <br />
-        <a href="/login">Log in here</a>
+        <a href="/login-nome">Log in here</a>
       </p>
     </div>
   );

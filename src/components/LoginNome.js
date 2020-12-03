@@ -1,52 +1,11 @@
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
-import FlatButton from "material-ui/FlatButton";
 import React, { Component } from "react";
 import zxcvbn from "zxcvbn"
-import { auth } from "./../redux/actions"
-import firebase from "firebase"
-import db from "./Database";
+import firebase from 'firebase';
+import db from "./Database"
 
 const validator = require("validator");
-
-const PasswordStr = props => {
-  var strColor;
-  var strWidth;
-
-  switch (props.score) {
-    case 1:
-      strColor = 'red';
-      strWidth = '20%';
-      break;
-    case 2:
-      strColor = 'orange';
-      strWidth = '40%';
-      break;
-    case 3:
-      strColor = 'yellow';
-      strWidth = '60%';
-      break;
-    case 4:
-      strColor = '#5cff47';
-      strWidth = '80%';
-      break;
-    case 5:
-      strColor = 'green';
-      strWidth = '100%';
-      break;
-    default:
-  }
-
-  var style = { backgroundColor: strColor, height: '5px', width: strWidth, transition: 'all 300ms ease-in-out' }
-
-  return (
-  <div>
-    <p className="pwStrWeak">weak</p>
-    <p className="pwStrStrong">strong</p>
-    <div style={style} />
-  </div> 
-  );
-}
 
 function SignUpForm({
   history,
@@ -62,17 +21,10 @@ function SignUpForm({
 }){
   return (
     <div className="loginBox">
-      <h1>Sign Up</h1>
+      <h1>Login</h1>
       {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
 
       <form onSubmit={onSubmit}>
-      <TextField
-          name="username"
-          floatingLabelText="user name"
-          value={user.username}
-          onChange={onChange}
-          errorText={errors.username}
-        />
         <TextField
           name="email"
           floatingLabelText="email"
@@ -88,27 +40,6 @@ function SignUpForm({
           onChange={onPwChange}
           errorText={errors.password}
         />
-
-        <div className="pwStrRow">
-          {score >= 1 && (
-            <div>
-              <PasswordStr score={score} /> 
-              <FlatButton 
-                className="pwShowHideBtn" 
-                label={btnTxt} onClick={pwMask} 
-                style={{position: 'relative', left: '50%', transform: 'translateX(-50%)'}} 
-              />
-            </div>
-            )} 
-        </div>
-        <TextField
-          type={type}
-          name="pwconfirm"
-          floatingLabelText="confirm password"
-          value={user.pwconfirm}
-          onChange={onChange}
-          errorText={errors.pwconfirm}
-        />
         <br />
         <RaisedButton
           className="signUpSubmit"
@@ -118,8 +49,12 @@ function SignUpForm({
         />
       </form>
       <p>
-        Aleady have an account? <br />
-        <a href="/login-user">Log in here</a>
+        Create new account? <br />
+        <a href="/intermediate-signup">Signup here</a>
+      </p>
+      <p>
+        Forgot password? <br />
+        <a href="/reset">Reset here</a>
       </p>
     </div>
   );
@@ -130,14 +65,14 @@ const validateSignUpForm = payload => {
   let message = "";
   let isFormValid = true;
 
-  if (
-    !payload ||
-    typeof payload.username !== "string" ||
-    payload.username.trim().length === 0
-  ) {
-    isFormValid = false;
-    errors.username = "Please provide a user name.";
-  }
+  // if (
+  //   !payload ||
+  //   typeof payload.username !== "string" ||
+  //   payload.username.trim().length === 0
+  // ) {
+  //   isFormValid = false;
+  //   errors.username = "Please provide a user name.";
+  // }
 
   if (
     !payload ||
@@ -157,44 +92,10 @@ const validateSignUpForm = payload => {
     errors.password = "Password must have at least 8 characters.";
   }
 
-  if (!payload || payload.pwconfirm !== payload.password) {
-    isFormValid = false;
-    errors.pwconfirm = "Password confirmation doesn't match.";
-  }
-
-  if (!isFormValid) {
-    message = "Check the form for errors.";
-  }
-
-  return {
-    success: isFormValid,
-    message,
-    errors
-  };
-};
-
-const validateLoginForm = payload => {
-  const errors = {};
-  let message = "";
-  let isFormValid = true;
-
-  if (
-    !payload ||
-    typeof payload.username !== "string" ||
-    payload.username.trim().length === 0
-  ) {
-    isFormValid = false;
-    errors.username = "Please provide your user name.";
-  }
-
-  if (
-    !payload ||
-    typeof payload.password !== "string" ||
-    payload.password.trim().length === 0
-  ) {
-    isFormValid = false;
-    errors.password = "Please provide your password.";
-  }
+  // if (!payload || payload.pwconfirm !== payload.password) {
+  //   isFormValid = false;
+  //   errors.pwconfirm = "Password confirmation doesn't match.";
+  // }
 
   if (!isFormValid) {
     message = "Check the form for errors.";
@@ -208,7 +109,7 @@ const validateLoginForm = payload => {
 };
 
 
-class SignupUser extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -269,43 +170,38 @@ class SignupUser extends Component {
 
   submitSignup(user) {
     var params = { username: user.usr, password: user.pw, email: user.email };
-      firebase.auth().createUserWithEmailAndPassword(params.email, params.password)
-      .then((user) => {
-        user.user.sendEmailVerification();
-        console.log(user);
-        db.collection("users").doc(user.user.uid).set(
-          {
-            email:params.email,
-            fullName : params.username,
-            phone : "6264733987",
-            phoneVerified : true,
-            uid : user.user.uid,
-            orders : [],
-            totalOrders : 0,
-            wallet:0
-          }
-        ).then((user)=>{
-          console.log(user);
-          alert("User created please login");
-          window.location.replace("/");
+    console.log(params);
+    firebase.auth().signInWithEmailAndPassword(params.email, params.password)
+    .then((user) => {
+      console.log(user.user)
+      if(user.user.emailVerified)
+      {
+        db.collection("gnomz").doc(user.user.uid).get().then((doc)=>{
+          let data = doc.data();
+          localStorage.setItem("id",user.user.uid);
+          localStorage.setItem("email",data.email);
+          localStorage.setItem("name",data.fullName);
+          localStorage.setItem("phone",data.phone);
+        }).then(()=>{
+          window.location.replace("/dashboard-nome");
         })
-        .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          console.log(error);
-          alert(errorMessage)
-        });
-      })
-      .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorCode,errorMessage);
-        alert(errorMessage)
-      });
+      }
+      else
+      {
+        alert("Please verify you email");
+      }
+    })
+    .catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorCode,errorMessage);
+      alert(errorMessage)
+    });
   }
 
   validateForm(event) {
     event.preventDefault();
+    console.log("yee")
     var payload = validateSignUpForm(this.state.user);
     if (payload.success) {
       this.setState({
@@ -354,4 +250,4 @@ class SignupUser extends Component {
   }
 }
 
-export default SignupUser;
+export default Login;
