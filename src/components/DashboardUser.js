@@ -26,7 +26,7 @@ const data = {
 };
  
 const styles = {
-	bgColor: "#add8e6"
+	bgColor: "#DBF9FF"
 };
 
 const config = {};
@@ -43,20 +43,20 @@ function Dashboard()
 	{
 		return(
 		<>
-		<div className="navigation">
-			<Navbar className="w-100 px-5 bg-transparent" expand="lg" static>
+		<div className="navigation shadow-lg">
+			<Navbar className="w-100 px-5 navv shadow-lg" expand="lg" static>
 			  <Navbar.Brand className="" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
 			  <Navbar.Toggle aria-controls="basic-navbar-nav" />
 			  <Navbar.Collapse id="basic-navbar-nav">
 			    <Nav className="ml-auto">
 				  {/* <Nav.Link className="px-5" href="/about" active>Home</Nav.Link> */}
-			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="#about" active>About us</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="#services" active>Services</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="#faq" active>FAQ's</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="#contact" active>Contact us</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="/hire" active>Hire</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" href="/wallet" active>Wallet</Nav.Link>
-			      <Nav.Link className="px-5 justify-content-center align-self-center text-white" onClick={signout} href="#" active>Signout</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#about" active>About us</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#services" active>Services</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/hire" active>Hire</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" href="/wallet" active>Wallet</Nav.Link>
+			      <Nav.Link className="px-5 justify-content-center align-self-center" onClick={signout} href="#" active>Signout</Nav.Link>
 			    </Nav>
 			  </Navbar.Collapse>
 			</Navbar>
@@ -89,7 +89,7 @@ function Dashboard()
 						<h1>How it Works?</h1>
 						<div className="row mt-5">
 							<div className="col-lg-3 col-md-6 col-sm-12 px-0">
-								<Card className="Card">
+								<Card className="Card bg-transparent">
 									<Card.Img className="px-4" variant="top" src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
 									<Card.Body>
 										<Card.Text>
@@ -99,7 +99,7 @@ function Dashboard()
 								</Card>
 							</div>
 							<div className="col-lg-3 col-md-6 col-sm-12 px-0">
-								<Card className="pt-5 Card">
+								<Card className="pt-5 Card bg-transparent">
 									<Card.Img className="px-5" variant="top" src="https://static.wixstatic.com/media/c3a0d6_07eec9072880491fa44916f0efec7b97~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/img_77504.webp" />
 									<Card.Body>
 										<Card.Text>
@@ -109,7 +109,7 @@ function Dashboard()
 								</Card>
 							</div>
 							<div className="col-lg-3 col-md-6 col-sm-12 px-0">
-								<Card className="Card">
+								<Card className="Card bg-transparent">
 									<Card.Img className="px-4" variant="top" src="https://static.wixstatic.com/media/c3a0d6_3559127850c84b44af90f00271b799b8~mv2.png/v1/fill/w_165,h_165,al_c,q_85,usm_0.66_1.00_0.01/dollar%252Bfunds%252Bhand%252Bpayment%252Bicon%252.webp" />
 									<Card.Body>
 										<Card.Text>
@@ -119,7 +119,7 @@ function Dashboard()
 								</Card>
 							</div>
 							<div className="col-lg-3 col-md-6 col-sm-12 px-0">
-								<Card className="pt-5 Card">
+								<Card className="pt-5 Card bg-transparent">
 									<Card.Img className="px-5" variant="top" src="https://static.wixstatic.com/media/c3a0d6_809b16b97eda4d90aa14a0e57b03922b~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/12413502551547544983-512.webp" />
 									<Card.Body>
 										<Card.Text>
