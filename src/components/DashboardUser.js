@@ -2,6 +2,7 @@ import { Card } from "react-bootstrap";
 import Faq from "react-faq-component";
 import { Nav, Navbar } from "react-bootstrap";
 import {  Redirect } from "react-router-dom";
+import Icofont from "react-icofont"
 
 
 const data = {
@@ -34,7 +35,8 @@ const config = {};
 function signout()
 {
 	localStorage.removeItem("email");
-	window.location.reload();
+	localStorage.removeItem("wallet");
+	window.location.replace("/");
 }
 
 function Dashboard()
@@ -62,9 +64,15 @@ function Dashboard()
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
+<<<<<<< HEAD
 		<div className="row">
 			<div className="back w-100 pt-5" style={{backgroundImage : `url("back.webp")`}}>
 				<div className="d-flex align-self-center mt-5 ml-5">
+=======
+		<div className="row w-100 m-0 px-5">
+			<div className="back w-100 d-flex justify-content-center" style={{backgroundImage : `url("back.webp")`}}>
+				<div className="d-flex align-self-center">
+>>>>>>> fc39620ca12f32d75e1d9a3e03cbf6172dd0f7df
 					<img className="image" alt="main" src="main.webp"/>
 				</div>
 			</div>
@@ -99,6 +107,7 @@ function Dashboard()
 									</Card.Body>
 								</Card>
 							</div>
+							<i className="icofont-arrow-right"></i>
 							<div className="col-lg-3 col-md-6 col-sm-12 px-0">
 								<Card className="pt-5 Card bg-transparent">
 									<Card.Img className="px-5" variant="top" src="https://static.wixstatic.com/media/c3a0d6_07eec9072880491fa44916f0efec7b97~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/img_77504.webp" />
