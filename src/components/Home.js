@@ -53,7 +53,7 @@ function Home()
 					  <Nav.Link className="px-5 justify-content-center align-self-center" href="#services" active>Services</Nav.Link>
 					  <Nav.Link className="px-5 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
 					  <Nav.Link className="px-5 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
-					  <Nav.Link className="px-5 justify-content-center align-self-center" href="/signup" active>Signup</Nav.Link>
+					  <Nav.Link className="px-5 justify-content-center align-self-center" href="/intermediate" active>Signup</Nav.Link>
 					  <Nav.Link className="px-5 justify-content-center align-self-center" href="/login" active>Login</Nav.Link>
 					</Nav>
 				  </Navbar.Collapse>

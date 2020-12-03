@@ -4,8 +4,10 @@ import Profile from "./components/Profile";
 import Hire from "./components/Hire";
 import Form from "./components/Form";
 import Home from "./components/Home";
-import Signup from "./components/Signup";
+import SignupUser from "./components/SignupUser";
+import SignupNome from "./components/SignupNome";
 import Login from "./components/Login";
+import Intermediate from "./components/Intermediate";
 import Reset from "./components/Reset";
 import Wallet from "./components/Wallet"
 import Dashboard from "./components/Dashboard";
@@ -25,13 +27,15 @@ function App() {
 		    <div className="App">
 		    	<Switch>
 		    		<Route exact path="/" component={() => <Home />} />
-		    		<Route exact path="/signup" component={() => <Signup dispatch={dispatch}/>} />
+		    		<Route exact path="/signup-user" component={() => <SignupUser dispatch={dispatch}/>} />
+		    		<Route exact path="/signup-nome" component={() => <SignupNome dispatch={dispatch}/>} />
 		    		<Route exact path="/login" component={() => <Login dispatch={dispatch}/>} />
 		    		<Route exact path="/reset" component={() => <Reset dispatch={dispatch}/>} />
 		    		<Route exact path="/dashboard" component={() => <Dashboard dispatch={dispatch}/>} />
 		    		<Route exact path="/profile" component={() => <Profile />} />
 		    		<Route exact path="/wallet" component={() => <Wallet />} />
 		    		<Route exact path="/hire" component={() => <Hire />} />
+		    		<Route exact path="/intermediate" component={() => <Intermediate />} />
 		    		<Route path="/form/:id/:name/:description/:rating/:pic" component={() => <Form />} />
 		    		<Redirect to="/"/>
 		    	</Switch>

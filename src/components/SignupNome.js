@@ -3,7 +3,6 @@ import TextField from "material-ui/TextField";
 import FlatButton from "material-ui/FlatButton";
 import React, { Component } from "react";
 import zxcvbn from "zxcvbn"
-import { auth } from "./../redux/actions"
 import firebase from "firebase"
 import db from "./Database";
 
@@ -68,17 +67,41 @@ function SignUpForm({
       <form onSubmit={onSubmit}>
       <TextField
           name="username"
-          floatingLabelText="user name"
+          floatingLabelText="User name"
           value={user.username}
           onChange={onChange}
           errorText={errors.username}
         />
         <TextField
           name="email"
-          floatingLabelText="email"
+          floatingLabelText="Email"
           value={user.email}
           onChange={onChange}
           errorText={errors.email}
+        />
+        <TextField
+          name="accnum"
+          floatingLabelText="Account number"
+          value={user.accnum}
+          onChange={onChange}
+        />
+        <TextField
+          name="ifsc"
+          floatingLabelText="IFSC"
+          value={user.ifsc}
+          onChange={onChange}
+        />
+        <TextField
+          name="phone"
+          floatingLabelText="Phone number"
+          value={user.phone}
+          onChange={onChange}
+        />
+        <TextField
+          name="info"
+          floatingLabelText="Info"
+          value={user.info}
+          onChange={onChange}
         />
         <TextField
           type={type}
@@ -208,7 +231,7 @@ const validateLoginForm = payload => {
 };
 
 
-class Signup extends Component {
+class SignupNome extends Component {
   constructor(props) {
     super(props);
 
@@ -268,26 +291,33 @@ class Signup extends Component {
   }
 
   submitSignup(user) {
-    var params = { username: user.usr, password: user.pw, email: user.email };
+    var params = { username: user.usr, password: user.pw, email: user.email,accnum : user.accnum,ifsc:user.ifsc, phone:user.phone,info : user.info };
       firebase.auth().createUserWithEmailAndPassword(params.email, params.password)
       .then((user) => {
         user.user.sendEmailVerification();
         console.log(user);
-        db.collection("users").doc(user.user.uid).set(
-          {
+        db.collection("gnomz").doc(user.user.uid).set(
+         {
+            accountNumber : params.accnum,
+            ifsc : params.ifsc,
+            address : null,
+            comments : [],
             email:params.email,
-            fullName : params.username,
-            phone : "6264733987",
-            phoneVerified : true,
-            uid : user.user.uid,
+            gnomi_pic_url:"https://miro.medium.com/max/10000/0*wZAcNrIWFFjuJA78",
+            info:params.info,
+            name : params.username,
+            nickname:params.username,
             orders : [],
-            totalOrders : 0,
-            wallet:0
+            phone : params.phone,
+            phoneVerified : false,
+            rating:0,
+            selectedGnomeFace:0,
+            services:[],
+            uid : user.user.uid,
           }
         ).then((user)=>{
-          console.log(user);
           alert("User created please login");
-          window.location.replace("/");
+          window.location.replace("/login");
         })
         .catch((error) => {
           var errorCode = error.code;
@@ -314,7 +344,11 @@ class Signup extends Component {
       var user = {
         usr: this.state.user.username,
         pw: this.state.user.password,
-        email: this.state.user.email
+        email: this.state.user.email,
+        accnum: this.state.user.accnum,
+        ifsc: this.state.user.ifsc,
+        phone : this.state.user.phone,
+        info : this.state.user.info
       };
       this.submitSignup(user);
     } else {
@@ -354,4 +388,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default SignupNome;
