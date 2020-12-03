@@ -8,13 +8,11 @@ async function handleToken(amount, token)
 	console.log(`token : ${token}`);
 	let status;
 	try{
-		console.log("start");
 		const customer = await
 		stripe.customers.create({
 			email: token.email,
 			source: token.id
 		});
-		console.log("here1");
 		const idempotency_key = 123;
 		const charge = await stripe.charges.create(
 			{
@@ -28,9 +26,8 @@ async function handleToken(amount, token)
 				idempotency_key
 			}
 		);
-		console.log("here2");
+		console.log(`amount paid : ${amount}`);
 		status = "success";
-		console.log(status);
 	} 
 	catch(error){
 		console.log(`error : ${error}`);
