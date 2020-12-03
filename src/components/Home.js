@@ -258,12 +258,12 @@ function Home()
 						</div>
 						<div id="faq">
 							<h1>FAQs</h1>
-							<div className="faq">
+							<div className="faq m-3">
 								<Faq data={data} styles={styles} config={config} />
 							</div>
 						</div>
-						<div id="contact">
-							<h1>Contact Us</h1>
+						<div id="contact" className="mt-5">
+							<h1 className="mb-4">Contact Us</h1>
 							<div className="row">
 								<div className="text-left col-6">
 									<h3><b>NomeWorkz</b></h3>
@@ -292,7 +292,7 @@ function Home()
 									<br/>
 									<i className="icofont-caret-right"></i><a href="#services">Services</a>
 									<br/>
-									<i className="icofont-caret-right"></i><a href="#faq">Nomes</a>
+									<i className="icofont-caret-right"></i><a href="#faq">Faq</a>
 									<br/>
 								</div>
 							</div>
