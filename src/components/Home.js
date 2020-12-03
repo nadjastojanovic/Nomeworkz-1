@@ -93,7 +93,7 @@ function Home()
 				<div className="row back m-0 w-100" style={{backgroundImage : `url("back.webp")`}}>
 					<div className="col-6 p-sm-5">
 						<img className="image p-sm-5" src="main.webp" alt="main"/>
-						<p className="p-sm-5">Slogan goes here</p>
+						<p className="pl-5 text-white"><b>Here goes the mission statement.</b></p>
 					</div>
 					<div className="col-6 d-flex align-self-center">
 						<div className="w-100 text-center">
