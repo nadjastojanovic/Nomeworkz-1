@@ -64,15 +64,9 @@ function Dashboard()
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
-<<<<<<< HEAD
-		<div className="row">
-			<div className="back w-100 pt-5" style={{backgroundImage : `url("back.webp")`}}>
-				<div className="d-flex align-self-center mt-5 ml-5">
-=======
 		<div className="row w-100 m-0 px-5">
 			<div className="back w-100 d-flex justify-content-center" style={{backgroundImage : `url("back.webp")`}}>
 				<div className="d-flex align-self-center">
->>>>>>> fc39620ca12f32d75e1d9a3e03cbf6172dd0f7df
 					<img className="image" alt="main" src="main.webp"/>
 				</div>
 			</div>
