@@ -103,6 +103,16 @@ function Home()
 									</Card>
 								</div>
 								<div className="col-lg-3 col-md-6 col-sm-12 px-0">
+									<Card className="Card">
+										<Card.Img className="px-4" variant="top" src="" />
+										<svg preserveAspectRatio="none" id="comp-kfit9f41svgcontent" data-bbox="19.999 58 160.001 84" viewBox="19.999 58 160.001 84" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img">
+										    <g>
+										        <path d="M172.5 142a7.485 7.485 0 0 1-5.185-2.073L100 75.808l-67.315 64.12c-2.998 2.846-7.74 2.744-10.606-.234a7.454 7.454 0 0 1 .235-10.565l72.5-69.057a7.524 7.524 0 0 1 10.371 0l72.5 69.057a7.455 7.455 0 0 1 .235 10.565A7.503 7.503 0 0 1 172.5 142z"></path>
+										    </g>
+										</svg>
+									</Card>
+								</div>
+								<div className="col-lg-3 col-md-6 col-sm-12 px-0">
 									<Card className="pt-5 Card">
 										<Card.Img className="px-5" variant="top" src="https://static.wixstatic.com/media/c3a0d6_07eec9072880491fa44916f0efec7b97~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/img_77504.webp" />
 										<Card.Body>
@@ -114,12 +124,22 @@ function Home()
 								</div>
 								<div className="col-lg-3 col-md-6 col-sm-12 px-0">
 									<Card className="Card">
+										<Card.Img className="px-4" variant="top" src="" />
+									</Card>
+								</div>
+								<div className="col-lg-3 col-md-6 col-sm-12 px-0">
+									<Card className="Card">
 										<Card.Img className="px-4" variant="top" src="https://static.wixstatic.com/media/c3a0d6_3559127850c84b44af90f00271b799b8~mv2.png/v1/fill/w_165,h_165,al_c,q_85,usm_0.66_1.00_0.01/dollar%252Bfunds%252Bhand%252Bpayment%252Bicon%252.webp" />
 										<Card.Body>
 											<Card.Text>
 												Make aPayment and your Nome will start working on your paper.
 											</Card.Text>
 										</Card.Body>
+									</Card>
+								</div>
+								<div className="col-lg-3 col-md-6 col-sm-12 px-0">
+									<Card className="Card">
+										<Card.Img className="px-4" variant="top" src="" />
 									</Card>
 								</div>
 								<div className="col-lg-3 col-md-6 col-sm-12 px-0">
