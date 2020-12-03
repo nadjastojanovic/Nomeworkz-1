@@ -75,26 +75,30 @@ function Home()
 			<>
 			<div>
 				<Navbar className="w-100 px-5 navigation shadow-lg" expand="lg" static>
-				  <Navbar.Brand className="" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
+				  <Navbar.Brand className="ml-5 px-5" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
 				  <Navbar.Toggle aria-controls="basic-navbar-nav backcolor" />
 				  <Navbar.Collapse id="basic-navbar-nav backcolor">
 					<Nav className="ml-auto backcolor">
 					  {/* <Nav.Link className="px-5" href="/about" active>Home</Nav.Link> */}
-					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#" active><b>Home</b></Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#about" active><b>About us</b></Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#services" active><b>Services</b></Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#faq" active><b>FAQ's</b></Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="#contact" active><b>Contact us</b></Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="/intermediate-signup" active><b>Signup</b></Nav.Link>
-					  <Nav.Link className="mx-4 justify-content-center align-self-center p-1" href="/intermediate-login" active><b>Login</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center px-3" href="#" active><b>Home</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center px-3" href="#about" active><b>About us</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center px-3" href="#services" active><b>Services</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center px-3" href="#faq" active><b>FAQ's</b></Nav.Link>
+					  <Nav.Link className="mx-4 justify-content-center align-self-center pr-5 mr-5" href="#contact" active><b>Contact us</b></Nav.Link>
 					</Nav>
 				  </Navbar.Collapse>
 				</Navbar>
 			</div>
 			<div className="row row1">
-				<div className="back w-100" style={{backgroundImage : `url("back.webp")`}}>
-					<div className="p-sm-5">
+				<div className="row back m-0 w-100" style={{backgroundImage : `url("back.webp")`}}>
+					<div className="col-6 p-sm-5">
 						<img className="image p-sm-5" src="main.webp" alt="main"/>
+						<p className="p-sm-5">Slogan goes here</p>
+					</div>
+					<div className="col-6 d-flex align-self-center">
+						<div className="w-100 text-center">
+							<button className="btn-primary w-25 rounded" onClick={()=>{window.location.replace("/intermediate-signup")}}>Let's go</button>
+						</div>
 					</div>
 				</div>
 				<div className="row w-100">
