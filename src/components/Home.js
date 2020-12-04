@@ -262,43 +262,43 @@ function Home()
 								<Faq data={data} styles={styles} config={config} />
 							</div>
 						</div>
-						<div id="contact" className="mt-5">
-							<h1 className="mb-4">Contact Us</h1>
-							<div className="row">
-								<div className="text-left col-6">
-									<h3><b>NomeWorkz</b></h3>
-									<p><b>Email</b> : NomeWorkz@gmail.com</p>
-									<p className="text-left"><b>Phone</b> : 9988776655, 9988475757</p>
-									<p className="ml-1">
-										<a href="#">
-											<i className="icofont-facebook p-1 icofont-2x" style={{color : "black"}}></i>
-										</a>
-										<a href="#">
-											<i className="icofont-google-plus p-1 icofont-2x" style={{color : "black"}}></i>
-										</a>
-										<a href="#">
-											<i className="icofont-instagram p-1 icofont-2x" style={{color : "black"}}></i>
-										</a>
-										<a href="#">
-											<i className="icofont-whatsapp p-1 icofont-2x" style={{color : "black"}}></i>
-										</a>
-									</p>
-								</div>
-								<div className="offset-3 col-3 text-left">
-									<h3>Useful Links</h3>
-									<i className="icofont-caret-right"></i><a href="#">Home</a>
-									<br/>
-									<i className="icofont-caret-right"></i><a href="#about">About Us</a>
-									<br/>
-									<i className="icofont-caret-right"></i><a href="#services">Services</a>
-									<br/>
-									<i className="icofont-caret-right"></i><a href="#faq">Faq</a>
-									<br/>
-								</div>
-							</div>
-						</div>
 					</div>
 					<div className="col-lg-2 col-md-1 col-sm-0"></div>
+				</div>
+			</div>
+			<div id="contact" className="mt-5 px-5 pt-3 text-center">
+				<h1 className="text-center">Contact Us</h1>
+				<div className="row px-5">
+					<div className="text-left offset-2 col-4">
+						<img className="m-1" width="180" alt="logo" src="logo.webp"/>
+						<p><b>Email</b> : NomeWorkz@gmail.com</p>
+						<p className="text-left"><b>Phone</b> : 9988776655, 9988475757</p>
+						<p className="ml-1">
+							<a href="#">
+								<i className="icofont-facebook p-1 icofont-2x" style={{color : "white"}}></i>
+							</a>
+							<a href="#">
+								<i className="icofont-google-plus p-1 icofont-2x" style={{color : "white"}}></i>
+							</a>
+							<a href="#">
+								<i className="icofont-instagram p-1 icofont-2x" style={{color : "white"}}></i>
+							</a>
+							<a href="#">
+								<i className="icofont-whatsapp p-1 icofont-2x" style={{color : "white"}}></i>
+							</a>
+						</p>
+					</div>
+					<div className="col-4 offset-2 text-left">
+						<h3>Useful Links</h3>
+						<i className="icofont-caret-right"></i><a href="#">Home</a>
+						<br/>
+						<i className="icofont-caret-right"></i><a href="#about">About Us</a>
+						<br/>
+						<i className="icofont-caret-right"></i><a href="#services">Services</a>
+						<br/>
+						<i className="icofont-caret-right"></i><a href="#faq">Faq</a>
+						<br/>
+					</div>
 				</div>
 			</div>
 			</>

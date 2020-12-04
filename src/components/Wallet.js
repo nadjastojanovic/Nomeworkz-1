@@ -1,50 +1,40 @@
 import StripeCheckout from "react-stripe-checkout";
 import { useState } from "react"
 
-const stripe = require("stripe")("sk_test_51HrQ9WISRuDB0X7oRPe1lkwQzgiLm2PgBy1f2uvlZmRhObzqdwdX7SW1LohcBF8MiJZZ2JZvpPthSnaJEqwQPj7o00e0oeJzvB");
+const stripe = require("stripe")("");
 
 async function handleToken(token,amount)
 {
 	console.log(token);
 	let status;
-	console.log(token.email,token.id);
-	let t = await stripe.customers.create({
-		email: "namanzelawat@gmail.com",
-		//source: token.id
-	}).then((function(customer){
-		console.log(customer);
-	})).catch((err)=>{
-		console.log(err)
-	});
-	console.log("exiting")
-	// try{
-	// 	console.log(token.email,token.id);
-	// 	stripe.customers.create({
-	// 		email: token.email,
-	// 		source: token.id
-	// 	});
-		// console.log("here1");
-		// const idempotency_key = 123;
-		// const charge = await stripe.charges.create(
-		// 	{
-		// 		amount: amount,
-		// 		currency: "usd",
-		// 		customer: customer.id,
-		// 		receipt_email: token.email,
-		// 		description: `Paid an amount of ${amount}.`,
-		// 	},
-		// 	{
-		// 		idempotency_key
-		// 	}
-		// );
-		// console.log("here2");
-		// status = "success";
-		// console.log(status);
-	// } 
-	// catch(error){
-	// 	console.log(`error : ${error}`);
-	// 	status = "failure";
-	// }
+	try{
+		console.log(token.email,token.id);
+		let customer = await stripe.customers.create({
+			email: token.email,
+			source: token.id
+		});
+		console.log("here1");
+		const idempotency_key = 123;
+		const charge = await stripe.charges.create(
+			{
+				amount: amount,
+				currency: "usd",
+				customer: customer.id,
+				receipt_email: token.email,
+				description: `Paid an amount of ${amount}.`,
+			},
+			{
+				idempotency_key
+			}
+		);
+		console.log("here2");
+		status = "success";
+		console.log(status);
+	} 
+	catch(error){
+		console.log(`error : ${error}`);
+		status = "failure";
+	}
 }
 
 
@@ -76,7 +66,7 @@ function Wallet()
 		<>
 		  <div class="card-body">
 		    <StripeCheckout 
-		    	stripeKey="pk_test_51HrQ9WISRuDB0X7oHBljiIAhHuJvnYU1lj1oVtbFxpUiQhEmWWaID1eGVi0jbvkVIWpse7D9cVk7Kdk4McfyvtD300sSnLCMU6"
+		    	stripeKey="pk_live_XaGBwvF5ibvmEAEIuK4z7aKj0033HZWVB0"
 		    	token={handleToken}
 		    	email={localStorage.email}
 		    	allowRememberMe={false}
