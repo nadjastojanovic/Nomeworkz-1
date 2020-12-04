@@ -1,7 +1,7 @@
 import StripeCheckout from "react-stripe-checkout";
 import { useState } from "react"
 
-const stripe = require("stripe")("");
+const stripe = require("stripe")("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");
 
 async function handleToken(token,amount)
 {
