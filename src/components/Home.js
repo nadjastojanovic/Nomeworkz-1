@@ -124,7 +124,7 @@ function Home()
 							<div className="row mt-5">
 								<div className="col-lg-3 col-md-6 col-sm-12 px-0">
 									<Card className="Card bg-transparent">
-										<Card.Img className="px-4" variant="top" src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
+										<Card.Img className="px-4 pt-2" variant="top" src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
 										<Card.Body>
 											<Card.Text>
 												Browse through hundreds of Nomes
@@ -284,7 +284,7 @@ function Home()
 										</a>
 									</p>
 								</div>
-								<div className="col-6 text-left">
+								<div className="offset-3 col-3 text-left">
 									<h3>Useful Links</h3>
 									<i className="icofont-caret-right"></i><a href="#">Home</a>
 									<br/>

@@ -10,19 +10,44 @@ const data = {
         {
             title: 
 				<p className="text-center px-3">
-					Lorem ipsum dolor sit amet 
-					<hr/>
+					Can you find an expert for any essay subjects? 
 				</p>,
             content:
 				<p className="text-center px-3">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
-					ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
-					In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
-					Fusce sed commodo purus, at tempus turpis.
-					<hr/>
+					Of course! We worked very hard to find the best essay writers experienced in any subject, even the most complicated like Physics, Engineering or Informational Technologies.
 				</p>
-				,
+		},
+		{
+            title: 
+				<p className="text-center px-3">
+					Is your writing service legal?
+				</p>,
+            content:
+				<p className="text-center px-3">
+					Our service is legal and is used by hundreds of students day-to- day basis. You can read reviews about our custom essay writing service online!
+				</p>
+        },
+		{
+            title: 
+				<p className="text-center px-3">
+					Is buying essays online safe?
+				</p>,
+            content:
+				<p className="text-center px-3">
+					You should not worry about safety as all payments are protected. Nomeworkz essay service has no access to your personal data all while accepting MasterCard, Visa, American Express and Discovery card.
+				</p>
+        },
+		{
+            title: 
+				<p className="text-center px-3">
+					How fast can your service complete an essay?
+				</p>,
+            content:
+				<p className="text-center px-3">
+				Your Nome will let you know what their turnaround time for your particular project is. If you need help with a more complicated lengthy paper, contact us beforehand. Your writing assistant will have more time for analysis and will produce an excellent piece.				
+				</p>
         }
+
     ],
 };
  
@@ -91,16 +116,16 @@ function Dashboard()
 					<div className = "py-4">
 						<h1>How it Works?</h1>
 						<div className="row mt-5">
-							<div className="col-lg-2 col-md-6 col-sm-12 px-0">
-								<Card className="Card bg-transparent">
-									<Card.Img className="px-4" variant="top" src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
-									<Card.Body>
-										<Card.Text>
-											Browse through hundreds of Nomes
-										</Card.Text>
-									</Card.Body>
-								</Card>
-							</div>
+							<div className="col-lg-3 col-md-6 col-sm-12 px-0">
+									<Card className="Card bg-transparent">
+										<Card.Img className="px-4 pt-2" variant="top" src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
+										<Card.Body>
+											<Card.Text>
+												Browse through hundreds of Nomes
+											</Card.Text>
+										</Card.Body>
+									</Card>
+								</div>
 							<div className="col-lg-3 col-md-6 col-sm-12 px-0">
 								<Card className="pt-5 Card bg-transparent">
 									<Card.Img className="px-5" variant="top" src="https://static.wixstatic.com/media/c3a0d6_07eec9072880491fa44916f0efec7b97~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/img_77504.webp" />
@@ -133,51 +158,139 @@ function Dashboard()
 							</div>
 						</div>
 					</div>
-					<div id="services">
-						<h1>Services</h1>
-						<p>Our professional team of experts in various subjects can handle any academic essay including, but not limited to:</p>
-					</div>
+					<div id="services" className = "py-4">
+							<h1>Services</h1>
+							<p>Our professional team of experts in various subjects can handle any academic essay including, but not limited to:</p>
+							<div className="row">
+								<div className="col-lg-4 col-md-6 col-sm-12">
+									<Card className="Card bg-transparent pl-5 py-3 m-1">
+										<Card.Img className="" variant="top" src="https://static.wixstatic.com/media/c3a0d6_600b03ec5f2c4dd992bc09ed4f5bf0ab~mv2.png/v1/fill/w_135,h_135,al_c,q_85,usm_0.66_1.00_0.01/Geography%20Icon.webp" />
+										<Card.Text>
+											<p className="m-2">
+												<b>
+													Geography
+												</b>
+											</p>
+										</Card.Text>
+									</Card>
+								</div>
+								<div className="col-lg-4 col-md-6 col-sm-12">
+									<Card className="Card bg-transparent pl-3 pr-3 py-3 m-1">
+										<Card.Img className="" variant="top" src="https://static.wixstatic.com/media/c3a0d6_daa740c22f124bbe916e8623ff1b1cc6~mv2.png/v1/fill/w_134,h_134,al_c,q_85,usm_0.66_1.00_0.01/Icon%202.webp" />
+										<Card.Text>
+											<p className="m-2">
+												<b>
+													Biology
+												</b>
+											</p>
+										</Card.Text>
+									</Card>
+								</div>
+								<div className="col-lg-4 col-md-6 col-sm-12">
+									<Card className="Card bg-transparent pr-5 py-3 m-1">
+										<Card.Img className="" variant="top" src="https://static.wixstatic.com/media/c3a0d6_17dfa5d66e464b9e85addf88f9f4fd61~mv2.png/v1/fill/w_135,h_135,al_c,q_85,usm_0.66_1.00_0.01/Icon%204.webp" />
+										<Card.Text>
+											<p className="m-2">
+												<b>
+													Sociology
+												</b>
+											</p>										
+										</Card.Text>
+									</Card>
+								</div>
+							</div>
+							<div className="row">
+								<div className="col-lg-3 col-md-6 col-sm-12">
+									<Card className="Card bg-transparent m-1">
+										<Card.Img className="" variant="top" src="https://static.wixstatic.com/media/c3a0d6_098843255c2a4cd9b2565c6d408b86cf~mv2.png/v1/fill/w_138,h_138,al_c,q_85,usm_0.66_1.00_0.01/Icon%206.webp" />
+										<Card.Text>
+											<p className="m-2">
+												<b>
+													Nursing
+												</b>
+											</p>
+										</Card.Text>
+									</Card>
+								</div>
+								<div className="col-lg-3 col-md-6 col-sm-12">
+									<Card className="Card bg-transparent m-1">
+										<Card.Img className="" variant="top" src="https://static.wixstatic.com/media/c3a0d6_a48aa399716f44ec9f1068673ce5180a~mv2.png/v1/fill/w_138,h_138,al_c,q_85,usm_0.66_1.00_0.01/Icon%203.webp" />
+										<Card.Text>
+											<p className="m-2">
+												<b>
+													Chemistry
+												</b>
+											</p>
+										</Card.Text>
+									</Card>
+								</div>
+								<div className="col-lg-3 col-md-6 col-sm-12">
+									<Card className="Card bg-transparent m-1">
+										<Card.Img className="" variant="top" src="https://static.wixstatic.com/media/c3a0d6_4e876ff152ca4e7b9fe9e25a3a3bf1b0~mv2.png/v1/fill/w_139,h_139,al_c,q_85,usm_0.66_1.00_0.01/Icon%205.webp" />
+										<Card.Text>
+											<p className="m-2">
+												<b>
+													Music
+												</b>
+											</p>
+										</Card.Text>
+									</Card>
+								</div>
+								<div className="col-lg-3 col-md-6 col-sm-12">
+									<Card className="Card bg-transparent m-1">
+										<Card.Img className="" variant="top" src="https://static.wixstatic.com/media/c3a0d6_f528bd846b9a4471be5c22f56499206e~mv2.png/v1/fill/w_138,h_138,al_c,q_85,usm_0.66_1.00_0.01/Icon%207.webp" />
+										<Card.Text>
+											<p className="m-2">
+												<b>
+													International Law
+												</b>
+											</p>
+										</Card.Text>
+									</Card>
+								</div>
+							</div>
+						</div>
 					<div id="faq">
-						<h1>FAQs</h1>
-						<div className="faq">
-							<Faq data={data} styles={styles} config={config} />
-						</div>
-					</div>
-					<div id="contact">
-						<h1>Contact Us</h1>
-						<div className="row">
-							<div className="text-left col-6">
-								<h3><b>NomeWorkz</b></h3>
-								<p><b>Email</b> : NomeWorkz@gmail.com</p>
-								<p className="text-left"><b>Phone</b> : 9988776655, 9988475757</p>
-								<p className="ml-1">
-									<a href="">
-										<i className="icofont-facebook p-1 icofont-2x" style={{color : "black"}}></i>
-									</a>
-									<a href="">
-										<i className="icofont-google-plus p-1 icofont-2x" style={{color : "black"}}></i>
-									</a>
-									<a href="">
-										<i className="icofont-instagram p-1 icofont-2x" style={{color : "black"}}></i>
-									</a>
-									<a href="">
-										<i className="icofont-whatsapp p-1 icofont-2x" style={{color : "black"}}></i>
-									</a>
-								</p>
-							</div>
-							<div className="col-6 text-left">
-								<h3>Useful Links</h3>
-								<i className="icofont-caret-right"></i><a href="#">Home</a>
-								<br/>
-								<i className="icofont-caret-right"></i><a href="#about">About Us</a>
-								<br/>
-								<i className="icofont-caret-right"></i><a href="#services">Services</a>
-								<br/>
-								<i className="icofont-caret-right"></i><a href="#faq">Nomes</a>
-								<br/>
+							<h1>FAQs</h1>
+							<div className="faq m-3">
+								<Faq data={data} styles={styles} config={config} />
 							</div>
 						</div>
-					</div>
+					<div id="contact" className="mt-5">
+							<h1 className="mb-4">Contact Us</h1>
+							<div className="row">
+								<div className="text-left col-6">
+									<h3><b>NomeWorkz</b></h3>
+									<p><b>Email</b> : NomeWorkz@gmail.com</p>
+									<p className="text-left"><b>Phone</b> : 9988776655, 9988475757</p>
+									<p className="ml-1">
+										<a href="#">
+											<i className="icofont-facebook p-1 icofont-2x" style={{color : "black"}}></i>
+										</a>
+										<a href="#">
+											<i className="icofont-google-plus p-1 icofont-2x" style={{color : "black"}}></i>
+										</a>
+										<a href="#">
+											<i className="icofont-instagram p-1 icofont-2x" style={{color : "black"}}></i>
+										</a>
+										<a href="#">
+											<i className="icofont-whatsapp p-1 icofont-2x" style={{color : "black"}}></i>
+										</a>
+									</p>
+								</div>
+								<div className="offset-3 col-3 text-left">
+									<h3>Useful Links</h3>
+									<i className="icofont-caret-right"></i><a href="#">Home</a>
+									<br/>
+									<i className="icofont-caret-right"></i><a href="#about">About Us</a>
+									<br/>
+									<i className="icofont-caret-right"></i><a href="#services">Services</a>
+									<br/>
+									<i className="icofont-caret-right"></i><a href="#faq">Faq</a>
+									<br/>
+								</div>
+							</div>
+						</div>
 				</div>
 				<div className="col-lg-2 col-md-1 col-sm-0"></div>
 			</div>
