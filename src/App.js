@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import Profile from "./components/Profile";
+import Account from "./components/Account";
+import NomeAccount from "./components/Nome_Account/NomeAccount";
 import Hire from "./components/Hire";
 import Form from "./components/Form";
 import Home from "./components/Home";
@@ -40,6 +42,8 @@ function App() {
 		    		<Route exact path="/profile" component={() => <Profile />} />
 		    		<Route exact path="/wallet" component={() => <Wallet />} />
 		    		<Route exact path="/hire" component={() => <Hire />} />
+					<Route exact path="/account" component={() => <Account/>} />
+					<Route exact path="/nomeaccount" component={() => <NomeAccount/>} />
 		    		<Route exact path="/intermediate-signup" component={() => <IntermediateSignup />} />
 		    		<Route exact path="/intermediate-login" component={() => <IntermediateLogin />} />
 		    		<Route path="/form/:id/:name/:description/:rating/:pic" component={() => <Form />} />

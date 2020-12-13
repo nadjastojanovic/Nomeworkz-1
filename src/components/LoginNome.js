@@ -50,7 +50,7 @@ function SignUpForm({
       </form>
       <p>
         Create new account? <br />
-        <a href="/intermediate-signup">Signup here</a>
+        <a href="/signup-nome">Signup here</a>
       </p>
       <p>
         Forgot password? <br />

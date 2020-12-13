@@ -210,7 +210,7 @@ function Form()
 											<label for="exampleFormControlTextarea1">Description about Homework</label>
 											<textarea className="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
 										</div>
-										<div className="form-group">
+										okNo		<div className="form-group">
 											<label for="exampleFormControlTextarea1">Special Notes</label>
 											<textarea className="form-control" id="exampleFormControlTextarea1" rows="3" name="spnotes"></textarea>
 										</div>

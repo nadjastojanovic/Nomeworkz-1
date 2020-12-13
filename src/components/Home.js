@@ -97,7 +97,7 @@ function Home()
 					</div>
 					<div className="col-6 d-flex align-self-center">
 						<div className="w-100 text-center">
-							<button className="btn-primary w-25 rounded" onClick={()=>{window.location.replace("/intermediate-signup")}}>Let's go</button>
+							<button className="btn-primary w-25 rounded" onClick={()=>{window.location.replace("/intermediate-login")}}>Let's go</button>
 						</div>
 					</div>
 				</div>

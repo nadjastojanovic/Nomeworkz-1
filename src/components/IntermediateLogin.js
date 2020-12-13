@@ -24,6 +24,7 @@ class IntermediateLogin extends Component {
           onClick={()=>{window.location.replace("/login-nome")}}
         />
       </form>
+      
     </div>
     );
   }

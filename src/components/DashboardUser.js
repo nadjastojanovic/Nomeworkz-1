@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 import Faq from "react-faq-component";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar,NavDropdown,Image } from "react-bootstrap";
 import {  Redirect } from "react-router-dom";
 import Icofont from "react-icofont"
 
@@ -83,8 +83,17 @@ function Dashboard()
 			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#faq" active><b>FAQ's</b></Nav.Link>
 			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#contact" active><b>Contact us</b></Nav.Link>
 			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/hire" active><b>Hire</b></Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/wallet" active><b>Wallet</b></Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" onClick={signout} href="#" active><b>Signout</b></Nav.Link>
+			      {/* <Nav.Link className="mx-4 justify-content-center align-self-center" href="/wallet" active><b>Wallet</b></Nav.Link> */}
+				  
+					<NavDropdown title={ <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' lenght = {20}width = {40} roundedCircle />} id="basic-nav-dropdown">
+					
+					<NavDropdown.Item href="/account">Account</NavDropdown.Item>
+					<NavDropdown.Item href="/wallet">Wallet</NavDropdown.Item>
+					
+					<NavDropdown.Divider />
+					<NavDropdown.Item  onClick={signout} href="#" >Signout</NavDropdown.Item>
+				</NavDropdown>
+			      
 			    </Nav>
 			  </Navbar.Collapse>
 			</Navbar>

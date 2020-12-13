@@ -1,6 +1,6 @@
 import { Card } from "react-bootstrap";
 import Faq from "react-faq-component";
-import { Nav, Navbar } from "react-bootstrap";
+import { Nav, Navbar ,NavDropdown,Image} from "react-bootstrap";
 import {  Redirect } from "react-router-dom";
 
 
@@ -33,7 +33,9 @@ const config = {};
 
 function signout()
 {
+
 	localStorage.removeItem("email");
+	localStorage.removeItem("wallet");
 	window.location.reload();
 }
 
@@ -44,20 +46,29 @@ function Dashboard()
 		return(
 		<>
 		<div>
-			<Navbar className="w-100 px-5 navigation" expand="lg" static>
-			  <Navbar.Brand className="" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
+			<Navbar className="w-100 px-5 navigation shadow-lg" expand="lg" static>
+			  <Navbar.Brand className="ml-5" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
 			  <Navbar.Toggle aria-controls="basic-navbar-nav" />
 			  <Navbar.Collapse id="basic-navbar-nav">
 			    <Nav className="ml-auto">
 				  {/* <Nav.Link className="px-5" href="/about" active>Home</Nav.Link> */}
-				  <Nav.Link className="mx-4 justify-content-center align-self-center" href="#" active>Home</Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#about" active>About us</Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#services" active>Services</Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#faq" active>FAQ's</Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#contact" active>Contact us</Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/hire" active>Hire</Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/wallet" active>Wallet</Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" onClick={signout} href="#" active>Signout</Nav.Link>
+				  <Nav.Link className="mx-4 justify-content-center align-self-center" href="/dashboard-nome" active><b>Home</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#about" active><b>About us</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#services" active><b>Services</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#faq" active><b>FAQ's</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="#contact" active><b>Contact us</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/hire" active><b>Hire</b></Nav.Link>
+			      {/* <Nav.Link className="mx-4 justify-content-center align-self-center" href="/wallet" active><b>Wallet</b></Nav.Link> */}
+				  
+					<NavDropdown title={ <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' lenght = {20}width = {40} roundedCircle />} id="basic-nav-dropdown">
+					
+					<NavDropdown.Item href="/nomeaccount">Account</NavDropdown.Item>
+					<NavDropdown.Item href="/wallet">Wallet</NavDropdown.Item>
+					
+					<NavDropdown.Divider />
+					<NavDropdown.Item  onClick={()=> signout()} href="#" >Signout</NavDropdown.Item>
+				</NavDropdown>
+			      
 			    </Nav>
 			  </Navbar.Collapse>
 			</Navbar>
