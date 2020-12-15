@@ -20,8 +20,8 @@ function SignUpForm({
   onPwChange
 }){
   return (
-    <div className="loginBox">
-      <h1>Login</h1>
+    <div >
+     
       {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
 
       <form onSubmit={onSubmit}>
@@ -48,14 +48,14 @@ function SignUpForm({
           label="submit"
         />
       </form>
-      <p>
+      {/* <p>
         Create new account? <br />
         <a href="/signup-nome">Signup here</a>
       </p>
       <p>
         Forgot password? <br />
         <a href="/reset">Reset here</a>
-      </p>
+      </p> */}
     </div>
   );
 };

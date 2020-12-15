@@ -44,8 +44,8 @@ function App() {
 		    		<Route exact path="/hire" component={() => <Hire />} />
 					<Route exact path="/account" component={() => <Account/>} />
 					<Route exact path="/nomeaccount" component={() => <NomeAccount/>} />
-		    		<Route exact path="/intermediate-signup" component={() => <IntermediateSignup />} />
-		    		<Route exact path="/intermediate-login" component={() => <IntermediateLogin />} />
+		    		{/* <Route exact path="/intermediate-signup" component={() => <IntermediateSignup />} /> */}
+		    		{/* <Route exact path="/intermediate-login" component={() => <IntermediateLogin />} /> */}
 		    		<Route path="/form/:id/:name/:description/:rating/:pic" component={() => <Form />} />
 		    		<Redirect to="/"/>
 		    	</Switch>

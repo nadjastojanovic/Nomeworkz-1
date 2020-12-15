@@ -138,8 +138,8 @@ function NomeAccount()
 				  <Nav.Link className="mx-4 justify-content-center align-self-center" href="/dashboard-nome" active><b>Home</b></Nav.Link>
 			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/dashboard-nome" active><b>About us</b></Nav.Link>
 			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/dashboard-nome" active><b>Services</b></Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/" active><b>FAQ's</b></Nav.Link>
-			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/" active><b>Contact us</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/dashboard-nome" active><b>FAQ's</b></Nav.Link>
+			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/dashboard-nome" active><b>Contact us</b></Nav.Link>
 			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/hire" active><b>Hire</b></Nav.Link>
 			      {/* <Nav.Link className="mx-4 justify-content-center align-self-center" href="/wallet" active><b>Wallet</b></Nav.Link> */}
 				  

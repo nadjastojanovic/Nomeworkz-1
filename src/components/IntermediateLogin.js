@@ -2,12 +2,13 @@ import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import FlatButton from "material-ui/FlatButton";
 import React, { Component } from "react";
+import {Container} from 'react-bootstrap'
 
 
 class IntermediateLogin extends Component {
   render() {
     return (
-      <div className="loginBox">
+      <Container >
       <h1>Choose</h1>
       <form>
         <RaisedButton
@@ -25,7 +26,7 @@ class IntermediateLogin extends Component {
         />
       </form>
       
-    </div>
+    </Container>
     );
   }
 }

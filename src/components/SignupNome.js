@@ -60,8 +60,8 @@ function SignUpForm({
   onPwChange
 }){
   return (
-    <div className="loginBox">
-      <h1>Sign Up</h1>
+    <div >
+     
       {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
 
       <form onSubmit={onSubmit}>
@@ -140,10 +140,10 @@ function SignUpForm({
           label="submit"
         />
       </form>
-      <p>
+      {/* <p>
         Aleady have an account? <br />
-        <a href="/login-nome">Log in here</a>
-      </p>
+       Log in
+      </p> */}
     </div>
   );
 };
