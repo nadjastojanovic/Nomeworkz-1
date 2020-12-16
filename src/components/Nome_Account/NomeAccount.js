@@ -156,8 +156,8 @@ function NomeAccount()
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
-            <Container className = "white" >
-				<Jumbotron fluid>
+            <Container className = "white " >
+				<Jumbotron fluid className = "white bgcolor">
                 <Container>
                     
                     <p>

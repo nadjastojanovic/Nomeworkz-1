@@ -8,9 +8,9 @@ import {Container} from 'react-bootstrap'
 class IntermediateLogin extends Component {
   render() {
     return (
-      <Container >
+      <Container  >
       <h1>Choose</h1>
-      <form>
+      <div>
         <RaisedButton
           className="signUpSubmit"
           primary={true}
@@ -24,7 +24,7 @@ class IntermediateLogin extends Component {
           label="nome"
           onClick={()=>{window.location.replace("/login-nome")}}
         />
-      </form>
+      </div>
       
     </Container>
     );

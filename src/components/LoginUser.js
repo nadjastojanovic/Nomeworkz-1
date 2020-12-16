@@ -46,7 +46,7 @@ function SignUpForm({
           className="signUpSubmit"
           primary={true}
           type="submit"
-          label="submit"
+          label="CONTINUE"
         />
       </form>
       {/* <p>

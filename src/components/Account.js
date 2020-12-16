@@ -155,14 +155,14 @@ function Account()
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
-            <Container className = "white" >
-				<Jumbotron fluid>
-                <Container>
+            <Container  >
+				<Jumbotron fluid className = "white bgcolor" >
+                <Container style={{marginTop : '100px'}}>
                     
-                    <p>
+                    <p style={{color: 'white'}}>
                    <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' width = {120} roundedCircle />
                     
-                    {"     "}{localStorage.name}
+                    {"     "}<h1>{localStorage.name}</h1>
                     </p>
                     
                 </Container>
