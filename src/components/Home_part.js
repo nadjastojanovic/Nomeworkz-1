@@ -114,18 +114,21 @@ function Home_part()
         </div>
         <div className="" >
             <div className="row back m-0 w-100" style={{backgroundImage : `url("back.webp")`}}>
-                <div className="col-6 p-sm-5" style={{marginTop : '15px'}}>
-                    <img className="image p-sm-5" width="70%"src="main.webp" alt="main"/>
-                    <p style={{color : 'white'}}> <b>The professional essay writing service for students who can't even.</b></p>
+                <div className="col-6 d-flex align-self-center">
+                    <p class="header p-sm-5"><b>The professional essay writing service for students who can't even.</b></p>
                 </div>
                 <div className="col-6 d-flex align-self-center">
-                    <div className="w-100 text-center">
-                        <button className="btn-primary w-25 rounded" onClick={() => setModalShow(true)}>Login</button>{" "}
-                        <button className="btn-primary w-25 rounded" onClick={() => setModalShow1(true)}>Signup</button>
+                    <div class="w-100">
+                        <img className="image" class="w-75 mx-auto" src="main.webp" alt="main"/>
+                        
+                        <div className="w-75 text-center">
+                            <button className="btn-primary rounded" onClick={() => setModalShow(true)}>Login</button>{" "}
+                            <button className="btn-primary rounded" onClick={() => setModalShow1(true)}>Signup</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div  className="row " >
+            <div  className="row" >
                 <div className="col-lg-2 col-md-1 col-sm-0"></div>
                 <div className="col-lg-8 col-md-10 col-sm-12 text-center px-5">
                     <div className = "py-4" id="about">
@@ -145,12 +148,11 @@ function Home_part()
                     </div>
                    
 
-                    <div className = "row">
-                        <h1><b>How it Works?</b></h1>
-                        <div className="row mt-5">
-                            <div className="col px-0">
+                    <h1><b>How does it work?</b></h1>
+                        <div className="row mt-5 mx-auto">
+                            <div class="col-md-2 px-0">
                                 <Card className="Card bg-transparent">
-                                    <Card.Img className="pt-2" variant="top" style={{width : '100%'}}  src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
+                                    <Card.Img class="pt-2 features-img" variant="top" src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
                                     
                                     <Card.Body>
                                         <Card.Text>
@@ -160,7 +162,7 @@ function Home_part()
                                 </Card>
                             </div>
 
-                            <div className="col ">
+                            <div class="col-md-1 px-0">
                                 <Card className="Card bg-transparent">
                                     <Card.Img   src="" />
                                     
@@ -170,14 +172,10 @@ function Home_part()
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
-                            </div>
-
-                            {/* arrow added */}
-                            {/*  */}
-                            
-                            <div className="col px-0">
-                                <Card className="pt-5 Card bg-transparent">
-                                    <Card.Img className="px-3" variant="top"  src="https://static.wixstatic.com/media/c3a0d6_07eec9072880491fa44916f0efec7b97~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/img_77504.webp" />
+                            </div>                            
+                            <div class="col-md-2 px-0">
+                                <Card className="Card bg-transparent">
+                                    <Card.Img class="pt-2 features-img" variant="top" src="https://static.wixstatic.com/media/c3a0d6_07eec9072880491fa44916f0efec7b97~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/img_77504.webp" />
                                     <Card.Body>
                                         <Card.Text>
                                             Tell us about your essay
@@ -185,7 +183,7 @@ function Home_part()
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col px-0">
+                            <div class="col-md-1 px-0">
                                 <Card className="Card bg-transparent">
                                     <Card.Img   src="" />
                                     
@@ -196,17 +194,17 @@ function Home_part()
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col px-0">
+                            <div class="col-md-2 px-0">
                                 <Card className="Card bg-transparent">
-                                    <Card.Img className="" variant="top" style={{width : '100%'}} src="https://static.wixstatic.com/media/c3a0d6_3559127850c84b44af90f00271b799b8~mv2.png/v1/fill/w_165,h_165,al_c,q_85,usm_0.66_1.00_0.01/dollar%252Bfunds%252Bhand%252Bpayment%252Bicon%252.webp" />
+                                    <Card.Img class="pt-2 features-img" variant="top" src="https://static.wixstatic.com/media/c3a0d6_3559127850c84b44af90f00271b799b8~mv2.png/v1/fill/w_165,h_165,al_c,q_85,usm_0.66_1.00_0.01/dollar%252Bfunds%252Bhand%252Bpayment%252Bicon%252.webp" />
                                     <Card.Body>
                                         <Card.Text>
-                                            Make aPayment .
+                                            Make a Payment
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col px-0">
+                            <div class="col-md-1 px-0">
                                 <Card className="Card bg-transparent">
                                     <Card.Img   src="" />
                                     
@@ -217,9 +215,9 @@ function Home_part()
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col px-0">
+                            <div class="col-md-2 px-0">
                                 <Card className=" Card bg-transparent">
-                                    <Card.Img className="" variant="top" style={{width : '100%'}}  src="https://static.wixstatic.com/media/c3a0d6_809b16b97eda4d90aa14a0e57b03922b~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/12413502551547544983-512.webp" />
+                                    <Card.Img class="pt-2 features-img" variant="top" src="https://static.wixstatic.com/media/c3a0d6_809b16b97eda4d90aa14a0e57b03922b~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/12413502551547544983-512.webp" />
                                     <Card.Body>
                                         <Card.Text>
                                             Release money to the Nome ONLY if you’re satisfied with the outcome
@@ -228,7 +226,6 @@ function Home_part()
                                 </Card>
                             </div>
                         </div>
-                    </div>
                     
 
 
@@ -335,7 +332,7 @@ function Home_part()
                 <div className="col-lg-2 col-md-1 col-sm-0"></div>
             </div>
         </div>
-        <div id="contact" className="mt-5 px-5 pt-3 text-center">
+        <div id="contact" className="mt-5 px-5 pt-5 text-center">
             <h1 className="text-center">Contact Us</h1>
             <div className="row px-5">
                 <div className="text-left offset-2 col-4">
@@ -343,16 +340,16 @@ function Home_part()
                     <p><b>Email</b> : NomeWorkz@gmail.com</p>
                     <p className="text-left"><b>Phone</b> : 9988776655, 9988475757</p>
                     <p className="ml-1">
-                        <a href="#">
+                        <a href="#" class="px-2">
                             <i className="icofont-facebook p-1 icofont-2x" style={{color : "white"}}></i>
                         </a>
-                        <a href="#">
+                        <a href="#" class="px-2">
                             <i className="icofont-google-plus p-1 icofont-2x" style={{color : "white"}}></i>
                         </a>
-                        <a href="#">
+                        <a href="#" class="px-2">
                             <i className="icofont-instagram p-1 icofont-2x" style={{color : "white"}}></i>
                         </a>
-                        <a href="#">
+                        <a href="#" class="px-2">
                             <i className="icofont-whatsapp p-1 icofont-2x" style={{color : "white"}}></i>
                         </a>
                     </p>
@@ -370,7 +367,7 @@ function Home_part()
                 </div>
             </div>
         </div>
-                // options shown
+                
                 {  modalShow===true ?  <div>
 
 <Modal
@@ -382,32 +379,29 @@ function Home_part()
         centered
         
     >
-        <div  >
-        <Modal.Header  className="Card1"  closeButton>
-         <Modal.Title id="contained-modal-title-sm" style={{marginLeft : '80px'}} >
-            Login as
-        </Modal.Title>
-        </Modal.Header>
-        <Modal.Body closeButton>
-            <Container>
-               <form style={{marginLeft : '70px'}}>
-                <RaisedButton
-                className="signUpSubmit"
-                primary={true}
-                label="user"
-                onClick={(event)=>{setloginUser(true) ;setModalShow(false)}}
-                />
-                <br />
-                <RaisedButton
-                className="signUpSubmit"
-                primary={true}
-                label="nome"
-                onClick={(event)=>{setloginNode(true);setModalShow(false)}}
-                />
-            </form>
-            </Container>
-        
-        </Modal.Body>
+        <div>
+            <Modal.Header  className="Card1"  closeButton>
+                <Modal.Title id="contained-modal-title-sm" class="w-100 text-center" style={{paddingLeft: '30px'}}>
+                    Login as
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body closeButton>
+                <Container>
+                    <form class="text-center">
+                        <RaisedButton
+                        className="signUpSubmit"
+                        primary={true}
+                        label="user"
+                        onClick={(event)=>{setloginUser(true) ;setModalShow(false)}}/>
+                    <br/>
+                        <RaisedButton
+                        className="signUpSubmit"
+                        primary={true}
+                        label="nome"
+                        onClick={(event)=>{setloginNode(true);setModalShow(false)}}/>
+                    </form>
+                </Container>
+            </Modal.Body>
         </div>
         
         
@@ -421,7 +415,7 @@ function Home_part()
                 }
 
 
-                //user login shown
+                
                 {loginUser===true?
                 <div>
 
@@ -453,9 +447,6 @@ function Home_part()
             </div>
                 :null
                 }
-
-                // nome login 
-
 
                 {loginNode===true?
                     <div>
@@ -489,9 +480,6 @@ function Home_part()
                     :null
             }
 
-
-            //signup modal
-            // options shown
                 {  modalShow1===true ?  <div>
 
     <Modal
@@ -532,15 +520,9 @@ function Home_part()
         
     </Modal>
 </div> : null
-               
-                
-                
-                
-                
+            
                 }
 
-
-                //user login shown
                 {signupUser===true?
                 <div>
 
@@ -572,9 +554,6 @@ function Home_part()
             </div>
                 :null
                 }
-
-                // nome login 
-
 
                 {signupNode===true?
                     <div>

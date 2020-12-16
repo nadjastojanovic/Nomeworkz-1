@@ -57,11 +57,9 @@ function Account()
         
                         });
 
-                    }
-
-		       
+                    }		       
             
-            }
+                }
 		      });
 		}).then(()=>{
             setorder(temp);
@@ -75,47 +73,40 @@ function Account()
         return (
             <>
             
-            <div><h1>My Account</h1></div>
+                <h1>My Account</h1>
                 View and edit your personal info below.
 
-                <hr></hr>
+                <hr/>
                 <div>Login Email:</div>
                 {localStorage.email}
-                    <div></div>
-                    <br></br>
-                 <Form>
-                <Form.Row>
-                    <Form.Group as={Col}>
-                    <Form.Label>First Name</Form.Label>
-                    <Form.Control type="name" placeholder="First name" />
-                    </Form.Group>
+                <div></div>
+                <br/>
+                <Form class="w-75">
+                    <Form.Row>
+                        <Form.Group as={Col}>
+                        <Form.Label>First Name</Form.Label>
+                        <Form.Control type="name" placeholder="First name" />
+                        </Form.Group>
 
-                    <Form.Group as={Col} controlId="formGridPassword">
-                    <Form.Label>Last Name</Form.Label>
-                    <Form.Control type="Last Name" placeholder="Last Name" />
-                    </Form.Group>
-                </Form.Row>
+                        <Form.Group as={Col} controlId="formGridPassword">
+                        <Form.Label>Last Name</Form.Label>
+                        <Form.Control type="Last Name" placeholder="Last Name" />
+                        </Form.Group>
+                    </Form.Row>
 
-                
+                    
 
-                <Form.Row>
-                    <Form.Group as={Col} controlId="formHorizontalEmail">
-                    <Form.Label>Contact Email</Form.Label>
-                    <Form.Control />
-                    </Form.Group>
+                    <Form.Row>
 
-                    <Form.Group as={Col} controlId="formGridState">
-                    <Form.Label>Phone</Form.Label>
-                    <Form.Control type="name"  />
-                    </Form.Group>
+                        <Form.Group as={Col} controlId="formGridState">
+                        <Form.Label>Phone</Form.Label>
+                        <Form.Control type="name"  />
+                        </Form.Group>
 
-                </Form.Row>
+                    </Form.Row>
 
-                
+                    <Button variant="primary" type="submit" style={{borderRadius: '50px'}}> Update Info </Button>
 
-                <Button variant="primary" type="submit">
-                    Update Info
-                </Button>
                 </Form> 
             </>
         )
@@ -127,7 +118,7 @@ function Account()
 			<>
 
 
-<div>
+        <div>
 			<Navbar className="w-100 px-5 navigation shadow-lg" expand="lg" static>
 			  <Navbar.Brand className="ml-5" href="/"><img width="180" alt="logo" src="logo.webp"/></Navbar.Brand>
 			  <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -142,7 +133,7 @@ function Account()
 			      <Nav.Link className="mx-4 justify-content-center align-self-center" href="/hire" active><b>Hire</b></Nav.Link>
 			      {/* <Nav.Link className="mx-4 justify-content-center align-self-center" href="/wallet" active><b>Wallet</b></Nav.Link> */}
 				  
-                  <NavDropdown title={ <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' lenght = {20}width = {40} roundedCircle />} id="basic-nav-dropdown">
+                  <NavDropdown title={ <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' length = {20}width = {40} roundedCircle />} id="basic-nav-dropdown">
 					
 					<NavDropdown.Item href="/account">Account</NavDropdown.Item>
 					<NavDropdown.Item href="/wallet">Wallet</NavDropdown.Item>
@@ -155,44 +146,36 @@ function Account()
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
-            <Container  >
-				<Jumbotron fluid className = "white bgcolor" >
-                <Container style={{marginTop : '100px'}}>
+        <Container>
+            <Jumbotron fluid className = "white bgcolor" >
+                <Container style={{paddingTop : '50px'}} class="px-5">
+                
+                    <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' width = {120} roundedCircle />
                     
-                    <p style={{color: 'white'}}>
-                   <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' width = {120} roundedCircle />
-                    
-                    {"     "}<h1>{localStorage.name}</h1>
-                    </p>
+                    <h1 style={{color: 'white'}}>{localStorage.name}</h1>
                     
                 </Container>
+            </Jumbotron>
+        </Container>
 
-                </Jumbotron>
-                <Button variant="outline-primary" onClick = {()=>{setcheck(1)}} active = {check===1}  >Account</Button>{' '}
-                <Button variant="outline-secondary"onClick = {()=>{setcheck(2)}} active = {check===2} >Left Task</Button>{' '}
-                <Button variant="outline-success"onClick = {()=>{setcheck(3)}} active = {check===3} >Completed Task</Button>{' '}
-                </Container>
-                
+        <Container className='w-100'>   
+            <Button style={{borderRadius: '5px 5px 0 0'}} variant="outline-primary" onClick = {()=>{setcheck(1)}} active = {check===1} >Account</Button>{' '}
+            <Button style={{borderRadius: '5px 5px 0 0'}} variant="outline-secondary" onClick = {()=>{setcheck(2)}} active = {check===2} >Incomplete Tasks</Button>{' '}
+            <Button style={{borderRadius: '5px 5px 0 0'}} variant="outline-success" onClick = {()=>{setcheck(3)}} active = {check===3} >Completed Tasks</Button>{' '}
+        </Container>
 
-                <Container className = "white">
-                
-                {check===1? Details() : null}
-                
-                {check===2? <Pending orderArray = {orderArray1} /> : null}
+        <Container style={{backgroundColor: 'white'}} className="white p-5 w-100">
 
-                {check===3? <Completed orderArray = {orderArray} /> : null}
-           
-                </Container>
-                
-                
+            {check===1? Details() : null}
+            
+            {check===2? <Pending orderArray = {orderArray1} /> : null}
 
-                
-                
-
+            {check===3? <Completed orderArray = {orderArray} /> : null}
+    
+        </Container>
 
 			</>
 			);
-	
 }
 
 export default Account;

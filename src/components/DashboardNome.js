@@ -75,12 +75,11 @@ function Dashboard()
 		</div>
 		<div className="" >
             <div className="row back m-0 w-100" style={{backgroundImage : `url("back.webp")`}}>
-                <div className="col-6 p-sm-5" style={{marginTop : '15px'}}>
-                    <img className="image p-sm-5" width="70%"src="main.webp" alt="main"/>
-                    <p style={{color : 'white'}}> <b>The professional essay writing service for students who can't even.</b></p>
+                <div className="col-6 d-flex align-self-center">                    
+                    <p class="header p-sm-5"><b>The professional essay writing service for students who can't even.</b></p>
                 </div>
                 <div className="col-6 d-flex align-self-center">
-                    
+                    <img className="image p-sm-5" src="main.webp" alt="main"/>
                 </div>
             </div>
             <div  className="row " >
@@ -103,12 +102,11 @@ function Dashboard()
                     </div>
                    
 
-                    <div className = "row">
-                        <h1><b>How it Works?</b></h1>
-                        <div className="row mt-5">
-                            <div className="col px-0">
+                    <h1><b>How does it work?</b></h1>
+                        <div className="row mt-5 mx-auto">
+                            <div class="col-md-2 px-0">
                                 <Card className="Card bg-transparent">
-                                    <Card.Img className="pt-2" variant="top" style={{width : '100%'}}  src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
+                                    <Card.Img class="pt-2 features-img" variant="top" src="https://static.wixstatic.com/media/c3a0d6_a676b1694cf14d8cb5b29318c62f2508~mv2.png/v1/fill/w_190,h_203,al_c,q_85,usm_0.66_1.00_0.01/Nome%20Vector.webp" />
                                     
                                     <Card.Body>
                                         <Card.Text>
@@ -118,7 +116,7 @@ function Dashboard()
                                 </Card>
                             </div>
 
-                            <div className="col ">
+                            <div class="col-md-1 px-0">
                                 <Card className="Card bg-transparent">
                                     <Card.Img   src="" />
                                     
@@ -128,14 +126,10 @@ function Dashboard()
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
-                            </div>
-
-                            {/* arrow added */}
-                            {/*  */}
-                            
-                            <div className="col px-0">
-                                <Card className="pt-5 Card bg-transparent">
-                                    <Card.Img className="px-3" variant="top"  src="https://static.wixstatic.com/media/c3a0d6_07eec9072880491fa44916f0efec7b97~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/img_77504.webp" />
+                            </div>                            
+                            <div class="col-md-2 px-0">
+                                <Card className="Card bg-transparent">
+                                    <Card.Img class="pt-2 features-img" variant="top" src="https://static.wixstatic.com/media/c3a0d6_07eec9072880491fa44916f0efec7b97~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/img_77504.webp" />
                                     <Card.Body>
                                         <Card.Text>
                                             Tell us about your essay
@@ -143,7 +137,7 @@ function Dashboard()
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col px-0">
+                            <div class="col-md-1 px-0">
                                 <Card className="Card bg-transparent">
                                     <Card.Img   src="" />
                                     
@@ -154,17 +148,17 @@ function Dashboard()
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col px-0">
+                            <div class="col-md-2 px-0">
                                 <Card className="Card bg-transparent">
-                                    <Card.Img className="" variant="top" style={{width : '100%'}} src="https://static.wixstatic.com/media/c3a0d6_3559127850c84b44af90f00271b799b8~mv2.png/v1/fill/w_165,h_165,al_c,q_85,usm_0.66_1.00_0.01/dollar%252Bfunds%252Bhand%252Bpayment%252Bicon%252.webp" />
+                                    <Card.Img class="pt-2 features-img" variant="top" src="https://static.wixstatic.com/media/c3a0d6_3559127850c84b44af90f00271b799b8~mv2.png/v1/fill/w_165,h_165,al_c,q_85,usm_0.66_1.00_0.01/dollar%252Bfunds%252Bhand%252Bpayment%252Bicon%252.webp" />
                                     <Card.Body>
                                         <Card.Text>
-                                            Make aPayment .
+                                            Make a Payment
                                         </Card.Text>
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col px-0">
+                            <div class="col-md-1 px-0">
                                 <Card className="Card bg-transparent">
                                     <Card.Img   src="" />
                                     
@@ -175,9 +169,9 @@ function Dashboard()
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col px-0">
+                            <div class="col-md-2 px-0">
                                 <Card className=" Card bg-transparent">
-                                    <Card.Img className="" variant="top" style={{width : '100%'}}  src="https://static.wixstatic.com/media/c3a0d6_809b16b97eda4d90aa14a0e57b03922b~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/12413502551547544983-512.webp" />
+                                    <Card.Img class="pt-2 features-img" variant="top" src="https://static.wixstatic.com/media/c3a0d6_809b16b97eda4d90aa14a0e57b03922b~mv2.png/v1/fill/w_150,h_150,al_c,q_85,usm_0.66_1.00_0.01/12413502551547544983-512.webp" />
                                     <Card.Body>
                                         <Card.Text>
                                             Release money to the Nome ONLY if you’re satisfied with the outcome
@@ -186,7 +180,6 @@ function Dashboard()
                                 </Card>
                             </div>
                         </div>
-                    </div>
                     
 
 
@@ -293,7 +286,7 @@ function Dashboard()
                 <div className="col-lg-2 col-md-1 col-sm-0"></div>
             </div>
         </div>
-			<div id="contact" className="mt-5 px-5 pt-3 text-center">
+            <div id="contact" className="mt-5 px-5 p-5 text-center">
 				<h1 className="text-center">Contact Us</h1>
 				<div className="row px-5">
 					<div className="text-left offset-2 col-4">
@@ -301,16 +294,16 @@ function Dashboard()
 						<p><b>Email</b> : NomeWorkz@gmail.com</p>
 						<p className="text-left"><b>Phone</b> : 9988776655, 9988475757</p>
 						<p className="ml-1">
-							<a href="#">
+							<a href="#" class="px-2">
 								<i className="icofont-facebook p-1 icofont-2x" style={{color : "white"}}></i>
 							</a>
-							<a href="#">
+							<a href="#" class="px-2">
 								<i className="icofont-google-plus p-1 icofont-2x" style={{color : "white"}}></i>
 							</a>
-							<a href="#">
+							<a href="#" class="px-2">
 								<i className="icofont-instagram p-1 icofont-2x" style={{color : "white"}}></i>
 							</a>
-							<a href="#">
+							<a href="#" class="px-2">
 								<i className="icofont-whatsapp p-1 icofont-2x" style={{color : "white"}}></i>
 							</a>
 						</p>

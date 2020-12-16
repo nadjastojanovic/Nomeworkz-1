@@ -3,7 +3,7 @@ import db from "./Database";
 import ReactStars from "react-rating-stars-component";
 import React from "react";
 import { render } from "react-dom";
-import { Nav, Navbar,NavDropdown , Jumbotron,Container ,Form,Button,Col,Image,Row} from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Jumbotron, Container, Form, Button, Col, Image, Row} from "react-bootstrap";
 function Hire()
 {
 	var [nomesArray,setNomes] = useState([]);
@@ -49,36 +49,43 @@ function Hire()
               </Navbar.Collapse>
             </Navbar>
        </div>
-		<Container>
+		<Container class="p-5 mb-2">
 		<Row   >
 			{
 				nomesArray.map(nome => {
 					return(	
-								
-						<Col style={{marginTop : '30px'}}  xs={6} md={4} className="text-center  p-5">
+						
+						<Col style={{marginTop : '30px'}}  xs={6} md={4} className="text-center">
+							<br/>
+							<br/>
 							<div class="card">
-								<div className="w-25 mx-auto">
-									<img class="card-img-top p-2" width = "120%" src={nome.pic} alt="Card cap"/>
-								</div>
 								<div class="card-body">
-								<h5 class="card-title">{nome.name}</h5>
-								<hr></hr>
-								<p class="card-text text-align">
-								<strong>Overall Rating:  </strong> 
+									<h5 class="card-title">{nome.name}</h5>
+									<p class="card-text text-align">
+										<span className="badge bg-primary mx-1">Paper</span> 
+										<span className="badge bg-info mx-1">PPT</span>
+										<span className="badge bg-warning mx-1">Resume</span>
+									</p>
+									<hr/>
 									
-							<i class="icofont-star" style={{color : '#ffd700'}} ></i>
-							<i class="icofont-star"style={{color : '#ffd700'}}></i>
-							<i class="icofont-star"style={{color : '#ffd700'}}></i>
-							<i class="icofont-star"style={{color : '#ffd700'}}></i>
-							<i class="icofont-star"style={{color : '#ffd700'}}></i>
-									{/* {[...Array(nome.rating)].map((x, i) =>
-										<i class="icofont-star"></i>
-									)} */}
-								</p>
-								<hr></hr>
-								<p class="card-text">{nome.description}</p>
-								<hr></hr>
-								<a href={"/form/"+nome.id+"/"+nome.name+"/"+nome.description+"/"+nome.rating+"/"+nome.pic} class="btn btn-primary">Hire</a>
+									<div className="mb-3 mx-auto">
+										<img class="card-img-top" src={nome.pic} alt="Card cap"/>
+									</div>
+									
+									<p class="card-text text-align">									
+										<i class="icofont-star" style={{color: '#ffd700'}}></i>
+										<i class="icofont-star" style={{color: '#ffd700'}}></i>
+										<i class="icofont-star" style={{color: '#ffd700'}}></i>
+										<i class="icofont-star" style={{color: '#ffd700'}}></i>
+										<i class="icofont-star" style={{color: '#ffd700'}}></i>
+										{/* {[...Array(nome.rating)].map((x, i) =>
+											<i class="icofont-star"></i>
+										)} */}
+									</p>
+									<hr/>
+									<p class="card-text">{nome.description}</p>
+
+									<a href={"/form/"+nome.id+"/"+nome.name+"/"+nome.description+"/"+nome.rating+"/"+nome.pic} class="btn btn-primary hire-btn">Hire</a>
 								</div>
 							</div>
 						</Col>
