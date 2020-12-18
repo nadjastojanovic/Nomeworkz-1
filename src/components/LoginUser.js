@@ -57,6 +57,7 @@ function SignUpForm({
         Forgot password? <br />
         <a href="/reset">Reset here</a>
       </p> */}
+      
     </div>
   );
 };

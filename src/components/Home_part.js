@@ -1,4 +1,4 @@
-import { Card } from "react-bootstrap";
+import { Card, TabContainer } from "react-bootstrap";
 import Faq from "react-faq-component";
 import { Nav, Navbar,NavDropdown , Jumbotron,Container ,Form,Button,Col,Image} from "react-bootstrap";
 import {  Redirect } from "react-router-dom";
@@ -368,192 +368,106 @@ function Home_part()
             </div>
         </div>
                 
-                {  modalShow===true ?  <div>
+        {modalShow===true ? <div>
 
-<Modal
-        size="sm"
-        show={modalShow &&(loginNode===false && loginUser===false)}
-        onHide={() => setModalShow(false)}
-        size="sm"
-        
-        centered
-        
-    >
-        <div>
-            <Modal.Header  className="Card1"  closeButton>
-                <Modal.Title id="contained-modal-title-sm" class="w-100 text-center" style={{paddingLeft: '30px'}}>
-                    Login as
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body closeButton>
-                <Container>
-                    <form class="text-center">
-                        <RaisedButton
-                        className="signUpSubmit"
-                        primary={true}
-                        label="user"
-                        onClick={(event)=>{setloginUser(true) ;setModalShow(false)}}/>
-                    <br/>
-                        <RaisedButton
-                        className="signUpSubmit"
-                        primary={true}
-                        label="nome"
-                        onClick={(event)=>{setloginNode(true);setModalShow(false)}}/>
-                    </form>
-                </Container>
-            </Modal.Body>
-        </div>
-        
-        
-    </Modal>
-</div> : null
-               
-                
-                
-                
-                
-                }
+        <Modal size="sm" show={modalShow &&(loginNode===false && loginUser===false)} onHide={() => setModalShow(false)}       centered>
+            <div>
+                <Modal.Header className="Card1" closeButton>
+                    <Modal.Title id="contained-modal-title-sm" class="w-100 text-center" style={{paddingLeft: '30px'}}>
+                        Login as
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body closeButton>
+                    <Container>
+                        <form class="text-center">
+                            <RaisedButton class="signUpSubmit w-100" primary={true} label="user" onClick={(event)=>{setloginUser(true); setModalShow(false)}} style={{marginRight: '15px'}}/>
+                            
+                            <RaisedButton class="signUpSubmit w-100" primary={true} label="nome" onClick={(event)=>{setloginNode(true);setModalShow(false)}}/>
+                        </form>
+                    </Container>
+                </Modal.Body>
+            </div>
+        </Modal>
+    </div> : null}
 
 
                 
                 {loginUser===true?
                 <div>
-
-                <Modal
-                        size="sm"
-                        show={loginUser}
-                        onHide={() =>setloginUser(false)}
-                        size="sm"
-                        
-                        centered
-                    
-                    >
+                    <Modal size="sm" show={loginUser} onHide={() =>setloginUser(false)} centered>
                         <Modal.Header className="Card1" closeButton>
-                         <Modal.Title id="contained-modal-title-sm" style={{marginLeft : '80px'}} >
-                        <h1>Login</h1>
-                        </Modal.Title>
+                            <Modal.Title id="contained-modal-title-sm" class="text-center w-100" style={{marginLeft : '30px'}} >
+                                Login
+                            </Modal.Title>
                         </Modal.Header>
                         <Modal.Body closeButton>
                             <Container>
-                            
-                               <LoginUser ></LoginUser>
-
+                                <LoginUser></LoginUser>
                             </Container>
-                        
                         </Modal.Body>
-                        
-                        
                     </Modal>
-            </div>
+                </div>
                 :null
                 }
 
                 {loginNode===true?
-                    <div>
-
-                    <Modal
-                            size="sm"
-                            show={loginNode}
-                            onHide={() => setloginNode(false)}
-                            size="sm"
-                            
-                            centered
-                        
-                        >
-                            <Modal.Header className="Card1" closeButton>
-                             <Modal.Title id="contained-modal-title-sm" style={{marginLeft : '80px'}} >
-                            <h1>Login</h1>
-                            </Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body closeButton>
-                                <Container>
-                                
-                                <LoginNome />
-                              
-                                </Container>
-                            
-                            </Modal.Body>
-                            
-                            
-                        </Modal>
-                </div>
-                    :null
-            }
-
-                {  modalShow1===true ?  <div>
-
-    <Modal
-        size="sm"
-        show={modalShow1 &&(signupNode===false && signupUser===false)}
-        onHide={() => setModalShow1(false)}
-        size="sm"
-        
-        centered
-    
-    >
-        <Modal.Header className="Card1" closeButton>
-         <Modal.Title id="contained-modal-title-sm" style={{marginLeft : '80px'}} >
-            Signup as
-        </Modal.Title>
-        </Modal.Header>
-        <Modal.Body closeButton>
-            <Container>
-               <form style={{marginLeft : '70px'}}>
-                <RaisedButton
-                className="signUpSubmit"
-                primary={true}
-                label="user"
-                onClick={(event)=>{setsignupUser(true) ;setModalShow1(false)}}
-                />
-                <br />
-                <RaisedButton
-                className="signUpSubmit"
-                primary={true}
-                label="nome"
-                onClick={(event)=>{setsignupNode(true);setModalShow1(false)}}
-                />
-            </form>
-            </Container>
-        
-        </Modal.Body>
-        
-        
-    </Modal>
-</div> : null
-            
-                }
-
-                {signupUser===true?
                 <div>
-
-                <Modal
-                        size="sm"
-                        show={signupUser}
-                        onHide={() =>setsignupUser(false)}
-                        size="sm"
-                        
-                        centered
-                    
-                    >
+                    <Modal size="sm" show={loginNode} onHide={() => setloginNode(false)} centered>
                         <Modal.Header className="Card1" closeButton>
-                         <Modal.Title id="contained-modal-title-sm" style={{marginLeft : '80px'}} >
-                        <h1>Sign Up</h1>
-                        </Modal.Title>
+                            <Modal.Title id="contained-modal-title-sm" class="w-100 text-center" style={{marginLeft : '30px'}} >
+                                Log in
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body closeButton>
+                            <Container>                        
+                                <LoginNome/>
+                            </Container>
+                        </Modal.Body>
+                    </Modal>
+                </div>
+                :null}
+
+                {  modalShow1===true ?
+                
+                <div>
+                    <Modal size="sm" show={modalShow1 &&(signupNode===false && signupUser===false)} onHide={() => setModalShow1(false)} centered>
+                        <div>
+                        <Modal.Header className="Card1" closeButton>
+                            <Modal.Title id="contained-modal-title-sm" class="text-center w-100" style={{marginLeft : '30px'}} >
+                                Sign up as
+                            </Modal.Title>
                         </Modal.Header>
                         <Modal.Body closeButton>
                             <Container>
-                            
-                               <SignupUser />
+                                <form class="text-center">
+                                    <RaisedButton className="signUpSubmit" primary={true} label="user" onClick={(event)=>{setsignupUser(true); setModalShow1(false)}} style={{marginRight: '15px'}} />
+                                    
+                                    <RaisedButton className="signUpSubmit" primary={true} label="nome" onClick={(event)=>{setsignupNode(true); setModalShow1(false)}}/>
+                                </form>
+                            </Container>
+                        </Modal.Body>
+                        </div>
+                    </Modal>
+                </div> : null}
+
+                {signupUser===true?
+                <div>
+                    <Modal size="sm" show={signupUser} onHide={() =>setsignupUser(false)} centered>
+                        <Modal.Header className="Card1" closeButton>
+                            <Modal.Title id="contained-modal-title-sm" class="w-100 text-center" style={{marginLeft : '30px'}} >
+                                Welcome!
+                            </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body closeButton>
+                            <Container>
+                                
+                                <SignupUser />
 
                             </Container>
-                        
+                            
                         </Modal.Body>
-                        
-                        
                     </Modal>
-            </div>
-                :null
-                }
+                </div> : null}
 
                 {signupNode===true?
                     <div>
@@ -568,8 +482,8 @@ function Home_part()
                         
                         >
                             <Modal.Header className="Card1" closeButton>
-                             <Modal.Title id="contained-modal-title-sm" style={{marginLeft : '80px'}} >
-                            <h1>Sign Up</h1>
+                             <Modal.Title id="contained-modal-title-sm" class="w-100 text-center" style={{marginLeft : '30px'}} >
+                            Sign Up
                             </Modal.Title>
                             </Modal.Header>
                             <Modal.Body closeButton>
