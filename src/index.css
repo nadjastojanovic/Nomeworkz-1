@@ -4,6 +4,7 @@
 html{
   overflow-x: hidden;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -48,5 +49,10 @@ code {
   color: white;
   font-size: 35px;
 }
+
+.Card {
+  text-align: center;
+}
+
  /*-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',*/
     /*'Ubuntu', 'Cantarell', */
