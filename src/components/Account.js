@@ -146,13 +146,14 @@ function Account()
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
+
         <Container>
-            <Jumbotron fluid className = "white bgcolor" >
-                <Container style={{paddingTop : '50px'}} class="px-5">
+            <Jumbotron fluid className="white bgcolor" style={{borderRadius: '0 0 50px 50px'}}>
+                <Container style={{padding : '50px 0 0 50px'}}>
                 
                     <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' width = {120} roundedCircle />
                     
-                    <h1 style={{color: 'white'}}>{localStorage.name}</h1>
+                    <h1 class="text-white text-center" style={{width: '120px'}}>{localStorage.name}</h1>
                     
                 </Container>
             </Jumbotron>
@@ -164,7 +165,7 @@ function Account()
             <Button style={{borderRadius: '5px 5px 0 0'}} variant="outline-success" onClick = {()=>{setcheck(3)}} active = {check===3} >Completed Tasks</Button>{' '}
         </Container>
 
-        <Container style={{backgroundColor: 'white'}} className="white p-5 w-100">
+        <Container style={{borderRadius: '10px 10px 0 0'}} className="white p-5 w-100">
 
             {check===1? Details() : null}
             

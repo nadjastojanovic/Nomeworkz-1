@@ -156,26 +156,25 @@ function NomeAccount()
 			  </Navbar.Collapse>
 			</Navbar>
 		</div>
-            <Container className = "white " >
-				<Jumbotron fluid className = "white bgcolor">
                 <Container>
-                    
-                    <p>
-                   <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' width = {120} roundedCircle />
-                    
-                    {"     "}{nome}
-                    </p>
-                    
+                    <Jumbotron fluid className="white bgcolor" style={{borderRadius: '0 0 50px 50px'}}>
+                        <Container style={{padding : '50px 0 0 50px'}}>
+                        
+                            <Image src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/512px-Circle-icons-profile.svg.png' width = {120} roundedCircle />
+                            
+                            <h1 class="text-white text-center" style={{width: '120px'}}>{localStorage.name}</h1>
+                            
+                        </Container>
+                    </Jumbotron>
                 </Container>
 
-                </Jumbotron>
-                <Button variant="outline-primary" onClick = {()=>{setcheck(1)}} active = {check===1}  >Account</Button>{' '}
-                <Button variant="outline-secondary"onClick = {()=>{setcheck(2)}} active = {check===2} >Left Task</Button>{' '}
-                <Button variant="outline-success"onClick = {()=>{setcheck(3)}} active = {check===3} >Completed Task</Button>{' '}
+                <Container className='w-100'>   
+                    <Button style={{borderRadius: '5px 5px 0 0'}} variant="outline-primary" onClick = {()=>{setcheck(1)}} active = {check===1} >Account</Button>{' '}
+                    <Button style={{borderRadius: '5px 5px 0 0'}} variant="outline-secondary" onClick = {()=>{setcheck(2)}} active = {check===2} >Incomplete Tasks</Button>{' '}
+                    <Button style={{borderRadius: '5px 5px 0 0'}} variant="outline-success" onClick = {()=>{setcheck(3)}} active = {check===3} >Completed Tasks</Button>{' '}
                 </Container>
-                
 
-                <Container className = "white">
+                <Container style={{borderRadius: '10px 10px 0 0'}} className="white p-5 w-100">
                 
                 {check===1? Details() : null}
                 
@@ -184,12 +183,6 @@ function NomeAccount()
                 {check===3? <Completed orderArray = {orderArray} /> : null}
            
                 </Container>
-                
-                
-
-                
-                
-
 
 			</>
 			);

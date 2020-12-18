@@ -9,19 +9,44 @@ const data = {
         {
             title: 
 				<p className="text-center px-3">
-					Lorem ipsum dolor sit amet 
-					<hr/>
+					Can you find an expert for any essay subjects? 
 				</p>,
             content:
 				<p className="text-center px-3">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat,
-					ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
-					In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae.
-					Fusce sed commodo purus, at tempus turpis.
-					<hr/>
+					Of course! We worked very hard to find the best essay writers experienced in any subject, even the most complicated like Physics, Engineering or Informational Technologies.
 				</p>
-				,
+		},
+		{
+            title: 
+				<p className="text-center px-3">
+					Is your writing service legal?
+				</p>,
+            content:
+				<p className="text-center px-3">
+					Our service is legal and is used by hundreds of students day-to- day basis. You can read reviews about our custom essay writing service online!
+				</p>
+        },
+		{
+            title: 
+				<p className="text-center px-3">
+					Is buying essays online safe?
+				</p>,
+            content:
+				<p className="text-center px-3">
+					You should not worry about safety as all payments are protected. Nomeworkz essay service has no access to your personal data all while accepting MasterCard, Visa, American Express and Discovery card.
+				</p>
+        },
+		{
+            title: 
+				<p className="text-center px-3">
+					How fast can your service complete an essay?
+				</p>,
+            content:
+				<p className="text-center px-3">
+				Your Nome will let you know what their turnaround time for your particular project is. If you need help with a more complicated lengthy paper, contact us beforehand. Your writing assistant will have more time for analysis and will produce an excellent piece.				
+				</p>
         }
+
     ],
 };
  

@@ -76,23 +76,31 @@ function Wallet()
 		</>
 	}
 	return(
+
 		<div class="card p-5 m-5">
-		  <div class="card-body">
-		    <h5 class="card-title">Wallet</h5>
-		    <p class="card-text">Here you can view your balance.</p>
-		  </div>
-		  <ul class="list-group list-group-flush">
-		    <li class="list-group-item">Current Balance :- {localStorage.wallet}</li>
-		  </ul>
-		  <div class="card-body">
-		    <h5 class="card-title">Add amount</h5>
-			<form onSubmit={(e) => submitHandler(e)}>
-				<label for="amountAdded">Enter the amount to be added to wallet.</label>
-				<input name="amountAdded" type="number" className="amountAdded mx-2" id="amountAdded"/>
-				<button action = "submit" className="btn btn-primary">Proceed</button>
-			</form>
-		  </div>
-		  {payDiv}
+			<div class="row">
+				<div class="col-6">
+					<div class="card-body">
+						<h5 class="card-title">Wallet</h5>
+						<p class="card-text">Here you can view your balance.</p>
+					</div>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">Current Balance :- {localStorage.wallet}</li>
+					</ul>
+					<div class="card-body">
+						<h5 class="card-title">Add amount</h5>
+						<form onSubmit={(e) => submitHandler(e)}>
+							<label for="amountAdded">Enter the amount to be added to wallet.</label>
+							<input name="amountAdded" type="number" className="amountAdded mx-2" id="amountAdded"/>
+							<button action = "submit" className="btn btn-primary">Proceed</button>
+						</form>
+					</div>
+					{payDiv}
+				</div>
+				<div class="col-6">
+					<img class="w-100" src="https://i.ibb.co/4Wyp62f/wallet-img.png"/>
+				</div>
+			</div>
 		</div>
 		);
 }
